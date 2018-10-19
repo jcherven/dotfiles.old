@@ -76,7 +76,3 @@ if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,extends:>,precedes:<,nbsp:+
 endif
 
-" Plugins go below this line
-
-" No more plugins after this line
-
