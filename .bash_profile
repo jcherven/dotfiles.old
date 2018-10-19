@@ -9,6 +9,7 @@
  #Aliases
     alias ls='ls -GFh'
     alias sheetdate='date +"%y-%m-%d-%a"'
+    alias vim='nvim'
 
 # Git-friendly command prompt
     source ~/git-prompt.sh
