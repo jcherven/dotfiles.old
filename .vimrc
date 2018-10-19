@@ -1,6 +1,3 @@
-" This line must be at the top; needed for pathogen
-execute pathogen#infect()
-
 " Normal commands go below this line
 set nocompatible              " required
 filetype off                  " required
