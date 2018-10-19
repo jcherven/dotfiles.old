@@ -25,3 +25,5 @@
     # '\W' adds the name of the current directory
     export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 
+# bash-completion brew package
+    [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

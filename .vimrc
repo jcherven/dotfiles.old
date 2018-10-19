@@ -6,8 +6,9 @@ set encoding=utf-8
 syntax on
 
 " Tab spacing
-set shiftwidth=4
 set expandtab
+set shiftwidth=4
+set softtabstop=4
 
 " Line numbers
 set nu
