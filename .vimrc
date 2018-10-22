@@ -36,7 +36,21 @@ set smartcase
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+" Indentation
 set autoindent
+set smartindent
+
+" Break line at word boundaries
+set linebreak
+
+" Justify wrapped lines
+set showbreak=…
+
+" Set column width
+set columns=80
+
+" Format comments
 
 " Use extended regex
 set magic
@@ -76,4 +90,35 @@ if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,extends:>,precedes:<,nbsp:+
 endif
 
+call plug#begin('~/.vim/plugged')
+" Airline status bar
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='angr'
 
+" List plugins below this line
+" Emmet snippets
+Plug 'mattn/emmet-vim'
+
+" Simple bracket and quote closing
+" Plug 'jiangmiao/auto-pairs'
+
+" Physics-based visual scrolling
+Plug 'yuttie/comfortable-motion.vim'
+
+" Automatic closing of quotes, parens, brackts, etc w syntax awareness
+Plug 'raimondi/delimitmate'
+
+" Tab completion based on searching the current buffer
+Plug 'ervandew/supertab'
+
+" Supposedly does syntax highlighting for JS but it must need some config
+Plug 'pangloss/vim-javascript'
+
+" Close HTML tags when the closing bracket is typed
+Plug 'alvan/vim-closetag'
+
+
+" No more plugins below this line
+
+call plug#end()
