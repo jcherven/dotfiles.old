@@ -12,7 +12,7 @@ export PATH=/usr/local/bin:$PATH
 #Aliases
 alias ls='ls -GFh'
 alias sheetdate='date +"%y-%m-%d-%a"'
-alias vim='nvim'
+# alias vim='nvim'
 
 # Git-friendly command prompt
     source ~/git-prompt.sh
@@ -33,7 +33,7 @@ alias vim='nvim'
     [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # Set default editor to nvim
-export EDITOR=nvim
+export EDITOR=vim
 
 # vi mode at the prompt
 set -o vi

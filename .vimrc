@@ -1,9 +1,11 @@
-" Normal commands go below this line
 set nocompatible              " required
 filetype off                  " required
 
 " Set default encoding
 set encoding=utf-8
+
+" Set 256 color mode
+set t_Co=256
 
 " syntax highlighting
 syntax on
@@ -48,7 +50,7 @@ set linebreak
 set showbreak=…
 
 " Set column width
-set columns=80
+" set columns=80
 
 " Format comments
 
@@ -84,37 +86,37 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 call plug#begin('~/.vim/plugged')
- Airline status bar
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='angr'
+    " Airline status bar
+    Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='angr'
 
-" List plugins below this line
-" Zenburn color scheme
-Plug 'vim-scripts/Zenburn'
+    " List plugins below this line
+    " Zenburn color scheme
+    Plug 'vim-scripts/Zenburn'
 
-" Emmet snippets
-Plug 'mattn/emmet-vim'
+    " Emmet snippets
+    Plug 'mattn/emmet-vim'
 
-" Indentation Guides
-Plug 'yggdroot/indentline'
-let g:indentLine_setColors = 0
+    " Indentation Guides
+    Plug 'yggdroot/indentline'
+    let g:indentLine_setColors = 0
 
-" Physics-based visual scrolling
-Plug 'yuttie/comfortable-motion.vim'
+    " Physics-based visual scrolling
+    Plug 'yuttie/comfortable-motion.vim'
 
-" Automatic closing of quotes, parens, brackts, etc w syntax awareness
-Plug 'raimondi/delimitmate'
+    " Automatic closing of quotes, parens, brackts, etc w syntax awareness
+    Plug 'raimondi/delimitmate'
 
-" Tab completion based on searching the current buffer
-Plug 'ervandew/supertab'
+    " Tab completion based on searching the current buffer
+    Plug 'ervandew/supertab'
 
-" Supposedly does syntax highlighting for JS but it must need some config
-Plug 'pangloss/vim-javascript'
+    " Supposedly does syntax highlighting for JS but it must need some config
+    Plug 'pangloss/vim-javascript'
 
-" Close HTML tags when the closing bracket is typed
-Plug 'alvan/vim-closetag'
+    " Close HTML tags when the closing bracket is typed
+    Plug 'alvan/vim-closetag'
 
-" End vim-plug declarations
+    " End vim-plug declarations
 
 call plug#end()
