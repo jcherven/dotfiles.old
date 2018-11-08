@@ -49,9 +49,6 @@ set linebreak
 " Justify wrapped lines
 set showbreak=…
 
-" Set column width
-" set columns=80
-
 " Format comments
 
 " Use extended regex
