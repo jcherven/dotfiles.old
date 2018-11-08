@@ -83,25 +83,22 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Tell Vim which characters to show for expanded TABs,
-" trailing whitespace, and end-of-lines. VERY useful!
-if &listchars ==# 'eol:$'
-  " set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  set listchars=tab:>\ ,extends:>,precedes:<,nbsp:+
-endif
-
 call plug#begin('~/.vim/plugged')
-" Airline status bar
+ Airline status bar
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='angr'
 
 " List plugins below this line
+" Zenburn color scheme
+Plug 'vim-scripts/Zenburn'
+
 " Emmet snippets
 Plug 'mattn/emmet-vim'
 
-" Simple bracket and quote closing
-" Plug 'jiangmiao/auto-pairs'
+" Indentation Guides
+Plug 'yggdroot/indentline'
+let g:indentLine_setColors = 0
 
 " Physics-based visual scrolling
 Plug 'yuttie/comfortable-motion.vim'
@@ -118,7 +115,6 @@ Plug 'pangloss/vim-javascript'
 " Close HTML tags when the closing bracket is typed
 Plug 'alvan/vim-closetag'
 
-
-" No more plugins below this line
+" End vim-plug declarations
 
 call plug#end()
