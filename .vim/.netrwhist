@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/jums/Desktop/bootcamp/UCFVW201808FSF2/homework'
+let g:netrw_dirhist_2='/Users/jums/Desktop/bootcamp/UCFVW201808FSF2'
+let g:netrw_dirhist_3='/Users/jums/Desktop/bootcamp'
+let g:netrw_dirhist_4='/Users/jums/Desktop/bootcamp/0_working_folder'
+let g:netrw_dirhist_5='/Users/jums/Desktop/bootcamp/0_working_folder/homework'
+let g:netrw_dirhist_6='/Users/jums/Desktop/bootcamp/0_working_folder/homework/week-7'
+let g:netrw_dirhist_7='/Users/jums/Desktop/bootcamp/0_working_folder/homework/week-7/railnote'
