@@ -47882,9 +47882,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>859 246 599 459 0 0 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1301 932 796 486 0 0 2560 1418 </string>
+	<string>886 792 928 394 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>260 181 570 815 0 0 2560 1418 </string>
+	<string>0 296 1048 1122 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>528 307 572 376 0 0 1440 878 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -49411,13 +49411,13 @@
 	<integer>0</integer>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Profiles</string>
 		<string>Recent Directories</string>
 		<string>Paste History</string>
 		<string>Command History</string>
+		<string>Jobs</string>
 	</array>
 	<key>UseBorder</key>
-	<false/>
+	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>Window Arrangements</key>
