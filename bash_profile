@@ -41,3 +41,4 @@ set -o vi
 # Show editing mode in prompt (only works in bash 4)
 # set show-mode-in-prompt on
 
+export PATH=/usr/local/mysql/bin:$PATH

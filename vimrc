@@ -4,22 +4,44 @@ filetype off                  " required
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
 
+    " Color Schemes
+        " Spacemacs color theme
+        Plug 'jcherven/spacemacs-theme.vim'
+
     " Airline status bar
     Plug 'bling/vim-airline'
         " Color theming for vim-airline
         Plug 'vim-airline/vim-airline-themes'
         let g:airline_theme='violet'
 
-    " List plugins below this line
+"""" List other plugins below this line
     
-    " Color Schemes
-        " Spacemacs color theme
-        Plug 'colepeters/spacemacs-theme.vim'
+    " Linting for numerous languages
+    Plug 'vim-syntastic/syntastic'
+        " Basic starter settings
 
-        " SerialExperimentsLain (dark, pastel, highlighted operators)
-        Plug 'lu-ren/SerialExperimentsLain'
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
 
-    " File system explorer
+        let g:syntastic_always_populate_loc_list = 1
+        let g:syntastic_auto_loc_list = 1
+        let g:syntastic_check_on_open = 1
+        let g:syntastic_check_on_wq = 0
+
+        " Enabled language checkers
+        let g:syntastic_checkers_javascript = ['javascript/eslint', 'javascript/jshint']
+        let g:syntastic_checkers_html = ['html/eslint']
+        let g:syntastic_checkers_sql = ['sql/sqlint']
+        let g:syntastic_checkers_markdown = ['markdown/mdl']
+        let g:syntastic_checkers_php = ['php/php']
+        let g:syntastic_checkers_json = ['json/jsonlint']
+        let g:syntastic_checkers_handlebars = ['handlebars/handlebars']
+        let g:syntastic_checkers_css = ['css/csslint']
+        let g:syntastic_checkers_sh = ['sh/shellcheck']
+    " End syntactic options
+    
+    " File system explorer sidebar
     Plug 'scrooloose/nerdtree'
         " Start NERDtree on opening vim with no files specified
         autocmd StdinReadPre * let s:std_in=1
@@ -31,8 +53,18 @@ call plug#begin('~/.vim/plugged')
     " Physics-based visual scrolling
     Plug 'yuttie/comfortable-motion.vim'
 
-    " Supposedly does syntax highlighting for JS but it must need some config
-    Plug 'pangloss/vim-javascript'
+    " Recognition for weird filetypes, used for linting
+        " Handlebars
+        Plug 'mustache/vim-mustache-handlebars'
+
+    " Does a little bit of syntax highlighting for JS
+    " Plug 'pangloss/vim-javascript'
+    "
+    " Does better syntax highlighting for JS
+    " Plug 'jelera/vim-javascript-syntax'
+
+    " Does even better syntax highlighting for js
+    Plug 'othree/yajs.vim'
 
     " Emmet snippets
     Plug 'mattn/emmet-vim'
@@ -42,17 +74,25 @@ call plug#begin('~/.vim/plugged')
 
     " Indentation Guides
     Plug 'yggdroot/indentline'
-    " let g:indentLine_setColors = 0
 
     " Automatic closing of quotes, parens, brackets, etc w syntax awareness
-    Plug 'raimondi/delimitmate'
+    Plug 'jiangmiao/auto-pairs'
 
     " Tab completion based on searching the current buffer
     Plug 'ervandew/supertab'
 
+    " Transparent background in a windowed terminal
+    Plug 'miyakogi/seiya.vim'
+        let g:seiya_auto_enable=1
+        let g:seiya_target_groups = has('nvim')? ['guibg'] : ['ctermbg']
+
 " End vim-plug declarations
 call plug#end()
-
+"
+"
+"
+" Vim native settings
+"
 " Set default encoding
 set encoding=utf-8
 
@@ -61,9 +101,8 @@ set t_Co=256
 
 " syntax highlighting
 syntax on
-
-" Show the line and col markers of the cursor (not needed with vim-airline)
-" set ruler
+filetype plugin on
+syntax enable
 
 " Powerful backspacing
 set backspace=indent,eol,start
