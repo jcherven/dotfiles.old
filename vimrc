@@ -17,36 +17,39 @@ call plug#begin('~/.vim/plugged')
 """" List other plugins below this line
     
     " Linting for numerous languages
-    Plug 'vim-syntastic/syntastic'
-        " Basic starter settings
+    "Plug 'vim-syntastic/syntastic'
+    "    " Basic starter settings
 
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
+    "    set statusline+=%#warningmsg#
+    "    set statusline+=%{SyntasticStatuslineFlag()}
+    "    set statusline+=%*
 
-        let g:syntastic_always_populate_loc_list = 1
-        let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 1
-        let g:syntastic_check_on_wq = 0
+    "    let g:syntastic_always_populate_loc_list = 1
+    "    let g:syntastic_auto_loc_list = 1
+    "    let g:syntastic_check_on_open = 1
+    "    let g:syntastic_check_on_wq = 0
 
         " Enabled language checkers
-        let g:syntastic_checkers_javascript = ['javascript/eslint', 'javascript/jshint']
-        let g:syntastic_checkers_html = ['html/eslint']
-        let g:syntastic_checkers_sql = ['sql/sqlint']
-        let g:syntastic_checkers_markdown = ['markdown/mdl']
-        let g:syntastic_checkers_php = ['php/php']
-        let g:syntastic_checkers_json = ['json/jsonlint']
-        let g:syntastic_checkers_handlebars = ['handlebars/handlebars']
-        let g:syntastic_checkers_css = ['css/csslint']
-        let g:syntastic_checkers_sh = ['sh/shellcheck']
+    "    let g:syntastic_checkers_javascript = ['javascript/eslint', 'javascript/jshint']
+    "    let g:syntastic_checkers_html = ['html/eslint']
+    "    let g:syntastic_checkers_sql = ['sql/sqlint']
+    "    let g:syntastic_checkers_markdown = ['markdown/mdl']
+    "    let g:syntastic_checkers_php = ['php/php']
+    "    let g:syntastic_checkers_json = ['json/jsonlint']
+    "    let g:syntastic_checkers_handlebars = ['handlebars/handlebars']
+    "    let g:syntastic_checkers_css = ['css/csslint']
+    "    let g:syntastic_checkers_sh = ['sh/shellcheck']
     " End syntactic options
+
+    " YouCompleteMe
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
     
     " File system explorer sidebar
     Plug 'scrooloose/nerdtree'
-        " Start NERDtree on opening vim with no files specified
-        autocmd StdinReadPre * let s:std_in=1
-        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-    
+         "Start NERDtree on opening vim with no files specified
+         autocmd StdinReadPre * let s:std_in=1
+         autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        "
     " Automatic toggling of rel/abs line numbering in normal/insert modes
     Plug 'jeffKreeftmeijer/vim-numbertoggle'
 
@@ -58,13 +61,16 @@ call plug#begin('~/.vim/plugged')
         Plug 'mustache/vim-mustache-handlebars'
 
     " Does a little bit of syntax highlighting for JS
-    " Plug 'pangloss/vim-javascript'
-    "
+    Plug 'pangloss/vim-javascript'
+
     " Does better syntax highlighting for JS
-    " Plug 'jelera/vim-javascript-syntax'
+    Plug 'jelera/vim-javascript-syntax'
 
     " Does even better syntax highlighting for js
     Plug 'othree/yajs.vim'
+
+    " Comment selected lines; toggles on and off with gc (line) and gC (block)
+    Plug 'tpope/vim-commentary'
 
     " Emmet snippets
     Plug 'mattn/emmet-vim'

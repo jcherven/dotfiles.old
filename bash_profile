@@ -10,9 +10,9 @@ export PATH=/usr/local/bin:$PATH
     export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> "$HOME"/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 
 #Aliases
-alias ls='ls -GFh'
-alias sheetdate='date +"%y-%m-%d-%a"'
-alias vim='nvim'
+    alias ls='ls -GFh'
+    alias sheetdate='date +"%y-%m-%d-%a"'
+    alias vim='nvim'
 
 # Git-friendly command prompt
     source ~/git-prompt.sh
@@ -31,6 +31,13 @@ alias vim='nvim'
 
 # bash-completion brew package
     [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# Homebrew shell completion
+#    if type brew 2&>/dev/null; then
+#      for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
+#        source "$completion_file"
+#      done
+#    fi
 
 # Set default editor to nvim
 export EDITOR=nvim
