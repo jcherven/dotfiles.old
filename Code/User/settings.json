@@ -65,7 +65,6 @@
     "terminal.integrated.shell.osx": "/bin/bash",
     "vscode-mysql.enableTelemetry": false,
     "zenMode.hideTabs": false,
-    "window.nativeTabs": true,
     "workbench.editor.openPositioning": "left",
     "editor.tabCompletion": "on",
     "editor.lineNumbers": "relative",
@@ -85,7 +84,7 @@
         "{}",
         [
             "#22aa44",
-            "#800080",
+            "#ba2f59",
             "#3a81c3"
         ],
         "Red"
@@ -104,4 +103,7 @@
     "vim.neovimPath": "/usr/local/",
     "vim.statusBarColors.visualline": "#005f87",
     "window.titleBarStyle": "native",
+    "window.nativeTabs": true,
+    "editor.insertSpaces": false,
+	"editor.detectIndentation": false,
 }
