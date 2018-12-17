@@ -188,5 +188,10 @@ nnoremap <C-H> <C-W><C-H>
     colorscheme spacemacs-theme
 
 " MacVim-specific settings
+if has('gui_running')
     " Set font
-    set guifont=IBM\ Plex\ Mono:h12
+    set guifont=IBM\ Plex\ Mono:h11
+    " Set transparancy on GUI window
+    set transparency:8
+    set blurradius:2
+endif

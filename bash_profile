@@ -6,6 +6,10 @@
 # Path export for homebrew things
 export PATH=/usr/local/bin:$PATH
 
+# Path export for mondodb things
+export MONGO_PATH=/usr/local/Cellar/mongodb/4.*/bin
+export PATH=$PATH:$MONGO_PATH/bin
+
 # Bash command history
     export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> "$HOME"/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 
