@@ -38,6 +38,17 @@
         "when": "terminalFocus"
     },
 
+    {
+        "key": "cmd+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+
     // Focus and unfocus the terminal
     {
         "key": "cmd+t",
