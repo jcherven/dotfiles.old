@@ -69,6 +69,13 @@ call plug#begin('~/.vim/plugged')
     " Does even better syntax highlighting for js
     Plug 'othree/yajs.vim'
 
+    " Javascript libraries syntax
+    Plug 'othree/javascript-libraries-syntax.vim'
+        let g:used_javascript_libs = "jquery,react,handlebars"
+
+    " jsx highlighting and indenting
+    Plug 'mxw/vim-jsx'
+
     " Comment selected lines; toggles on and off with gc (line) and gC (block)
     Plug 'tpope/vim-commentary'
 
