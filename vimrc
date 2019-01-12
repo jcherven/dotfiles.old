@@ -174,7 +174,7 @@ set clipboard=unnamed
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\" 
 
     " Set the scrollbox distance from the top and bottom
-    set scrolloff=20
+    set scrolloff=10
 
 " Specify which area of the screen to split
 set splitbelow
@@ -200,5 +200,5 @@ if has('gui_running')
     set guifont=IBM\ Plex\ Mono:h11
     " Set transparancy on GUI window
     set transparency:8
-    set blurradius:2
+    set blurradius:4
 endif
