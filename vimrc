@@ -46,12 +46,19 @@ call plug#begin('~/.vim/plugged')
     
     " File system explorer sidebar
     Plug 'scrooloose/nerdtree'
-         "Start NERDtree on opening vim with no files specified
-         autocmd StdinReadPre * let s:std_in=1
-         autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-        "
-    " Git flags for NERDtree
-    Plug 'Xuyuanp/nerdtree-git-plugin'
+       "Start NERDtree on opening vim with no files specified
+       autocmd StdinReadPre * let s:std_in=1
+       autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+      " Persistent NERDtree across tabs
+      " Plug 'jistr/vim-nerdtree-tabs'
+      "   let g:nerdtree_tabs_open_on_console_startup=1
+
+      " Git flags for NERDtree
+      Plug 'Xuyuanp/nerdtree-git-plugin'
+
+    " Attractive tab display
+    Plug 'mkitt/tabline.vim'
 
     " Automatic toggling of rel/abs line numbering in normal/insert modes
     Plug 'jeffKreeftmeijer/vim-numbertoggle'
@@ -199,6 +206,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Enable mouse interactions
+set mouse=nv
 
 " Set colorscheme
     if (has("termguicolors"))
