@@ -75,7 +75,6 @@ call plug#begin('~/.vim/plugged')
     "   let g:mta_use_matchparen_group = 0
     "   let g:mta_filetypes = {
     "   \  'html': 1,
-    "   \  'html5': 1,
     "   \  'xhtml': 1,
     "   \  'xml': 1,
     "   \  'javascript.jsx': 1
