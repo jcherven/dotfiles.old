@@ -28,23 +28,23 @@
 
     // Moving focus between terminals
     {
-        "key": "cmd+k",
+        "key": "ctrl+k",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
     {
-        "key": "cmd+j",
+        "key": "ctrl+j",
         "command": "workbench.action.terminal.focusNextPane",
         "when": "terminalFocus"
     },
 
     {
-        "key": "cmd+h",
+        "key": "ctrl+h",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
     {
-        "key": "cmd+l",
+        "key": "ctrl+l",
         "command": "workbench.action.terminal.focusNextPane",
         "when": "terminalFocus"
     },
@@ -68,22 +68,22 @@
 
     // Moving focus between editor groups
     {
-        "key": "cmd+h",
+        "key": "ctrl+h",
         "command": "workbench.action.focusLeftGroup",
         "when": "!terminalFocus"
     },
     {
-        "key": "cmd+j",
+        "key": "ctrl+j",
         "command": "workbench.action.focusBelowGroup",
         "when": "!terminalFocus"
     },
     {
-        "key": "cmd+k",
+        "key": "ctrl+k",
         "command": "workbench.action.focusAboveGroup",
         "when": "!terminalFocus"
     },
     {
-        "key": "cmd+l",
+        "key": "ctrl+l",
         "command": "workbench.action.focusRightGroup",
         "when": "!terminalFocus"
     },

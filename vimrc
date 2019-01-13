@@ -165,7 +165,7 @@ set smartindent
 set linebreak
 
 " Justify wrapped lines
-set showbreak=…
+let &showbreak = '+++ '
 
 " Format comments
 
@@ -188,7 +188,7 @@ set clipboard=unnamed
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\" 
 
     " Set the scrollbox distance from the top and bottom
-    set scrolloff=10
+    set scrolloff=8
 
 " Specify which area of the screen to split
 set splitbelow
@@ -208,11 +208,11 @@ nnoremap <C-H> <C-W><C-H>
 
     colorscheme spacemacs-theme
 
-" MacVim-specific settings
+" MacVim or GVim-specific settings
 if has('gui_running')
     " Set font
     set guifont=IBM\ Plex\ Mono:h11
     " Set transparancy on GUI window
     set transparency:8
-    set blurradius:4
+    set blurradius:16
 endif
