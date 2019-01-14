@@ -49,6 +49,12 @@ call plug#begin('~/.vim/plugged')
        "Start NERDtree on opening vim with no files specified
        autocmd StdinReadPre * let s:std_in=1
        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+       " Keep the NERDtree window on the left at all times
+       let g:NERDtreeWinPos = "left"
+       " Pretty arrows in the dir tree
+       let g:NERDtreeDirArrows = 1
+       " Automatically kill the buffer of a deleted file
+       let g:NERDtreeAutoDeleteBuffer = 1
 
       " Persistent NERDtree across tabs
       " Plug 'jistr/vim-nerdtree-tabs'
@@ -63,7 +69,7 @@ call plug#begin('~/.vim/plugged')
     " Automatic toggling of rel/abs line numbering in normal/insert modes
     Plug 'jeffKreeftmeijer/vim-numbertoggle'
 
-    " Physics-based visual scrolling
+    " Physics-based visual scrolling when using ctrl-d and ctrl-u
     Plug 'yuttie/comfortable-motion.vim'
 
     " Recognition for weird filetypes, used for linting
@@ -98,6 +104,9 @@ call plug#begin('~/.vim/plugged')
 
     " Comment selected lines; toggles on and off with gc (line) and gC (block)
     Plug 'tpope/vim-commentary'
+
+    " Easymotion
+    Plug 'easymotion/vim-easymotion'
 
     " Emmet snippets
     Plug 'mattn/emmet-vim'
@@ -196,7 +205,7 @@ set clipboard=unnamed
     " Set the scrollbox distance from the top and bottom
     set scrolloff=8
 
-" Specify which area of the screen to split
+" Default split directions for Hsplits and Vsplits
 set splitbelow
 set splitright
 
