@@ -47,6 +47,9 @@ call plug#begin('~/.vim/plugged')
     " Session and workspace manager
     Plug 'thaerkh/vim-workspace'
 
+    " Swap windows with <leader>ww
+    Plug 'wesq3/vim-windowswap'
+
     " File system explorer sidebar
     Plug 'scrooloose/nerdtree'
       "Start NERDtree with a blank buffer on opening vim with no files specified
@@ -201,6 +204,10 @@ set magic
 
 " Line numbers
 set number
+
+" Set current working directory to that of the focused window without messing
+" up plugins
+autocmd Bufenter * silent! lcd %:p:h
 
 " Clipboard
 set clipboard=unnamed
