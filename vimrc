@@ -45,7 +45,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
     
     " Session and workspace manager
-    " Plug 'thaerkh/vim-workspace'
+    Plug 'thaerkh/vim-workspace'
 
     " File system explorer sidebar
     Plug 'scrooloose/nerdtree'
