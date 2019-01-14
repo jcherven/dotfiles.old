@@ -10,9 +10,15 @@ call plug#begin('~/.vim/plugged')
 
     " Airline status bar
     Plug 'bling/vim-airline'
-        " Color theming for vim-airline
-        Plug 'vim-airline/vim-airline-themes'
-        let g:airline_theme='violet'
+      " Color theming for vim-airline
+      Plug 'vim-airline/vim-airline-themes'
+      let g:airline_theme='violet'
+      " Enable the tabline displaying all buffers when only one tab is open
+      let g:airline#extensions#tabline#enabled = 1
+      " Disable airline on FocusLost autocommand (e.g. when Vim loses focus)
+      let g:airline_focuslost_inactive = 1
+      " Enable cursormode integration
+      " let g:airline#extensions#cursormode#enabled = 1
 
 """" List other plugins below this line
     
@@ -59,6 +65,9 @@ call plug#begin('~/.vim/plugged')
       " Close vim if the only thing left open is a NERDTree
       " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif     
 
+      " Minimal mode
+      let NERDTreeMinimalUI=1
+
       " Keep the NERDtree window on the left at all times
       let g:NERDTreeWinPos = "left"
 
@@ -80,6 +89,9 @@ call plug#begin('~/.vim/plugged')
 
     " Attractive tab display
     Plug 'mkitt/tabline.vim'
+
+    " Cursor color configuration
+    " Plug 'vheon/vim-cursormode'
 
     " Automatic toggling of rel/abs line numbering in normal/insert modes
     Plug 'jeffKreeftmeijer/vim-numbertoggle'
@@ -128,6 +140,9 @@ call plug#begin('~/.vim/plugged')
 
     " Close HTML tags when the closing bracket is typed
     Plug 'alvan/vim-closetag'
+
+    " Git wrapper
+    Plug 'tpope/vim-fugitive'
 
     " Indentation Guides
     Plug 'yggdroot/indentline'
@@ -207,7 +222,8 @@ set number
 
 " Set current working directory to that of the focused window without messing
 " up plugins
-autocmd Bufenter * silent! lcd %:p:h
+set autochdir
+" autocmd Bufenter * silent! lcd %:p:h
 
 " Clipboard
 set clipboard=unnamed
