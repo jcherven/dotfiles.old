@@ -44,17 +44,29 @@ call plug#begin('~/.vim/plugged')
     " YouCompleteMe
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
     
+    " Session and workspace manager
+    " Plug 'thaerkh/vim-workspace'
+
     " File system explorer sidebar
     Plug 'scrooloose/nerdtree'
-       "Start NERDtree on opening vim with no files specified
-       autocmd StdinReadPre * let s:std_in=1
-       autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-       " Keep the NERDtree window on the left at all times
-       let g:NERDtreeWinPos = "left"
-       " Pretty arrows in the dir tree
-       let g:NERDtreeDirArrows = 1
-       " Automatically kill the buffer of a deleted file
-       let g:NERDtreeAutoDeleteBuffer = 1
+      "Start NERDtree with a blank buffer on opening vim with no files specified
+      autocmd StdinReadPre * let s:std_in=1
+      autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+      " Close vim if the only thing left open is a NERDTree
+      " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif     
+
+      " Keep the NERDtree window on the left at all times
+      let g:NERDTreeWinPos = "left"
+
+      " Show line numbers in nerd tree
+      let g:NERDTreeShowLineNumbers=1
+
+      " Pretty arrows in the dir tree
+      let g:NERDTreeDirArrows = 1
+
+      " Automatically kill the buffer of a deleted file
+      let g:NERDTreeAutoDeleteBuffer = 1
 
       " Persistent NERDtree across tabs
       " Plug 'jistr/vim-nerdtree-tabs'
