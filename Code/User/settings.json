@@ -111,10 +111,10 @@
     "terminal.integrated.fontSize": 11,
     "window.zoomLevel": -0.5,
     "backgroundCover.imagePath": "/Users/jums/Pictures/wallpaper_station_sakura_blur.jpg",
-    "backgroundCover.opacity": 1,
     "rainbowString": {
         "extensions": [
             ".js"
         ]
-    }
+    },
+    "backgroundCover.opacity": 0.9
 }
