@@ -62,16 +62,14 @@ call plug#begin('~/.vim/plugged')
     " Automatic toggling of rel/abs line numbering in normal/insert modes
     Plug 'jeffKreeftmeijer/vim-numbertoggle'
 
-
     " Physics-based visual scrolling when using ctrl-d and ctrl-u
     Plug 'yuttie/comfortable-motion.vim'
-
 
     " Indentation Guides
     Plug 'yggdroot/indentline'
 
     " Session and workspace manager
-    Plug 'thaerkh/vim-workspace'
+    " Plug 'thaerkh/vim-workspace'
 
     " Swap windows with <leader>ww
     Plug 'wesq3/vim-windowswap'
@@ -83,6 +81,9 @@ call plug#begin('~/.vim/plugged')
 
     " Easymotion
     Plug 'easymotion/vim-easymotion'
+
+    " Pasting with indentation adjusted to the destination context
+    Plug 'sickill/vim-pasta'
 
 """"""""""""""""""""""""""""""
 """" Languages and syntax """"
@@ -101,6 +102,9 @@ call plug#begin('~/.vim/plugged')
       \  'javascript.jsx': 1,
       \  'handlebars': 1
       \}
+
+    " Handlebars filetype recognition
+    Plug 'mustache/vim-mustache-handlebars'
 
     " Does a little bit of syntax highlighting for JS
     Plug 'pangloss/vim-javascript'
