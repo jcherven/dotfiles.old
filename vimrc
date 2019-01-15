@@ -67,9 +67,11 @@ call plug#begin('~/.vim/plugged')
 
     " Indentation Guides
     Plug 'yggdroot/indentline'
-
+    
+    " Required for vim-session (directly below)
+    Plug 'xolox/vim-misc'
     " Session and workspace manager
-    " Plug 'thaerkh/vim-workspace'
+    Plug 'xolox/vim-session'
 
     " Swap windows with <leader>ww
     Plug 'wesq3/vim-windowswap'
