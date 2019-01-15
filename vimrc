@@ -23,18 +23,21 @@ call plug#begin('~/.vim/plugged')
     Plug 'bling/vim-airline'
       " Color theming for vim-airline
       Plug 'vim-airline/vim-airline-themes'
-        let g:airline_theme='violet'
-
+      let g:airline_theme='violet'
+      " Skip the text encoding string if it matches utf-8
+      let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+      " Remove separators for empty sections
+      let g:airline_skip_empty_secitons = 1
       " Enable the tabline displaying all buffers when only one tab is open
       let g:airline#extensions#tabline#enabled = 1
       " Disable airline on FocusLost autocommand (e.g. when Vim loses focus)
-      let g:airline_focuslost_inactive = 1
+      let g:airline_focuslost_inactive = 0
       " Customizable tab labels
       Plug 'mkitt/tabline.vim'
       " Enable taboo, a tab decoration builtin
       Plug 'gcmt/taboo.vim'
         let g:airline#extensions#taboo#enabled = 1
-        let g:taboo_tab_format = " %N: %P%m(%w) "
+        let g:taboo_tab_format = " %N:%P%m "
       " Git wrapper
       Plug 'tpope/vim-fugitive'
 
@@ -43,7 +46,7 @@ call plug#begin('~/.vim/plugged')
       "Start NERDtree with a blank buffer on opening vim with no files specified
       autocmd StdinReadPre * let s:std_in=1
       autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-      " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif     
+      " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
       " Minimal mode
       let NERDTreeMinimalUI=1
       " Keep the NERDtree window on the left at all times
@@ -67,11 +70,12 @@ call plug#begin('~/.vim/plugged')
 
     " Indentation Guides
     Plug 'yggdroot/indentline'
-    
-    " Required for vim-session (directly below)
-    Plug 'xolox/vim-misc'
+
     " Session and workspace manager
     Plug 'xolox/vim-session'
+      let g:session_default_name = "session"
+      " Required for vim-session
+      Plug 'xolox/vim-misc'
 
     " Swap windows with <leader>ww
     Plug 'wesq3/vim-windowswap'
@@ -87,13 +91,16 @@ call plug#begin('~/.vim/plugged')
     " Pasting with indentation adjusted to the destination context
     Plug 'sickill/vim-pasta'
 
+    " Highlights trailing whitespace, provides :FixWhitespace to delete it
+    Plug 'bronson/vim-trailing-whitespace'
+
 """"""""""""""""""""""""""""""
 """" Languages and syntax """"
-""""""""""""""""""""""""""""""  
+""""""""""""""""""""""""""""""
 
     " YouCompleteMe
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
-    
+
     " Valloric's highlighting for matching XML/HTML tags
     Plug 'valloric/matchtagalways'
       let g:mta_use_matchparen_group = 0
@@ -218,7 +225,7 @@ set clipboard=unnamed
     " Tmux compatible, works in iTerm2
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\" 
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
     " Set the scrollbox distance from the top and bottom
     set scrolloff=8
