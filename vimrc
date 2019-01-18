@@ -277,7 +277,7 @@ set conceallevel=0
     endif
     set background=dark
 
-    " colorscheme spacemacs-theme
+    colorscheme spacemacs-theme
 
 " MacVim or GVim-specific settings
 if has('gui_running')
