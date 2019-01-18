@@ -19,7 +19,7 @@ call plug#begin('~/.vim/plugged')
     " Spacemacs color theme
     Plug 'jcherven/spacemacs-theme.vim'
 
-    " Airline status bar
+    " Airline status bar and associated plugins
     Plug 'bling/vim-airline'
       " Color theming for vim-airline
       Plug 'vim-airline/vim-airline-themes'
@@ -27,7 +27,7 @@ call plug#begin('~/.vim/plugged')
       " Skip the text encoding string if it matches utf-8
       let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
       " Remove separators for empty sections
-      let g:airline_skip_empty_secitons = 1
+      let g:airline_skip_empty_sections = 1
       " Enable the tabline displaying all buffers when only one tab is open
       let g:airline#extensions#tabline#enabled = 1
       " Disable airline on FocusLost autocommand (e.g. when Vim loses focus)
@@ -98,11 +98,11 @@ call plug#begin('~/.vim/plugged')
       " Required for vim-session
       Plug 'xolox/vim-misc'
 
-      " Physics-based visual scrolling when using ctrl-d and ctrl-u
-      Plug 'yuttie/comfortable-motion.vim'
+    " Physics-based visual scrolling when using ctrl-d and ctrl-u
+    Plug 'yuttie/comfortable-motion.vim'
 
-      " Improved autoread checking
-      Plug 'djoshea/vim-autoread'
+    " Improved autoread checking
+    Plug 'djoshea/vim-autoread'
 
 """"""""""""""""""""""""""""""
 """" Languages and syntax """"
@@ -268,7 +268,7 @@ nnoremap <C-H> <C-W><C-H>
 " Enable mouse interactions
 set mouse=nv
 
-" Disable concealing of quotation marks in json
+" Disable concealing of quotation marks in .json files
 set conceallevel=0
 
 " Set colorscheme
