@@ -65,38 +65,59 @@ call plug#begin('~/.vim/plugged')
     " Automatic toggling of rel/abs line numbering in normal/insert modes
     Plug 'jeffKreeftmeijer/vim-numbertoggle'
 
-    " Physics-based visual scrolling when using ctrl-d and ctrl-u
-    Plug 'yuttie/comfortable-motion.vim'
-
     " Indentation Guides
     Plug 'yggdroot/indentline'
-
-    " Session and workspace manager
-    Plug 'xolox/vim-session'
-      let g:session_default_name = "session"
-      " Required for vim-session
-      Plug 'xolox/vim-misc'
-
-    " Swap windows with <leader>ww
-    Plug 'wesq3/vim-windowswap'
 
     " Transparent background in a windowed terminal
     Plug 'miyakogi/seiya.vim'
         let g:seiya_auto_enable=1
         let g:seiya_target_groups = has('nvim')? ['guibg'] : ['ctermbg']
 
-    " Easymotion
-    Plug 'easymotion/vim-easymotion'
-
     " Pasting with indentation adjusted to the destination context
     Plug 'sickill/vim-pasta'
+
+    """""""""""""""""""""""""""""""
+    """"""" Interface Command providers """"""
+    """""""""""""""""""""""""""""""
+    " Surround text; replace with `cs`, remove with `ds`, surround with
+    " `ysiw`, visually surround with `S`
+    Plug 'tpope/vim-surround'
 
     " Highlights trailing whitespace, provides :FixWhitespace to delete it
     Plug 'bronson/vim-trailing-whitespace'
 
+    " Easymotion; provides `\\`
+    Plug 'easymotion/vim-easymotion'
+
+    " Swap windows with `\ww`
+    Plug 'wesq3/vim-windowswap'
+
+    " Session and workspace manager; provides :SaveSession and :OpenSession
+    Plug 'xolox/vim-session'
+      let g:session_default_name = "session"
+      " Required for vim-session
+      Plug 'xolox/vim-misc'
+
+      " Physics-based visual scrolling when using ctrl-d and ctrl-u
+      Plug 'yuttie/comfortable-motion.vim'
+
+      " Improved autoread checking
+      Plug 'djoshea/vim-autoread'
+
 """"""""""""""""""""""""""""""
 """" Languages and syntax """"
 """"""""""""""""""""""""""""""
+  " Syntastic
+  " Plug 'scrooloose/syntastic'
+    " Beginner defaults
+    " set statusline+=%#warningmsg#
+    " set statusline+=%{SyntasticStatuslineFlag()}
+    " set statusline+=%*
+
+    " let g:syntastic_always_populate_loc_list = 1
+    " let g:syntastic_auto_loc_list = 1
+    " let g:syntastic_check_on_open = 1
+    " let g:syntastic_check_on_wq = 0
 
     " YouCompleteMe
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
@@ -114,6 +135,9 @@ call plug#begin('~/.vim/plugged')
 
     " Handlebars filetype recognition
     Plug 'mustache/vim-mustache-handlebars'
+
+    " PHP syntax for vim
+    Plug 'stanangeloff/php.vim'
 
     " Does a little bit of syntax highlighting for JS
     Plug 'pangloss/vim-javascript'
@@ -219,16 +243,15 @@ set autochdir
 set clipboard=unnamed
 
 " Cursor settings
-    set cursorline
+set cursorline
 
-    " Block cursor in NORMAL, I beam in INSERT.
-    " Tmux compatible, works in iTerm2
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" Block cursor in NORMAL, I beam in INSERT (tmux and iTerm2 compatible).
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
-    " Set the scrollbox distance from the top and bottom
-    set scrolloff=8
+" Set the scrollbox distance from the top and bottom
+set scrolloff=8
 
 " Default split directions for Hsplits and Vsplits
 set splitbelow
@@ -244,6 +267,9 @@ nnoremap <C-H> <C-W><C-H>
 
 " Enable mouse interactions
 set mouse=nv
+
+" Disable concealing of quotation marks in json
+set conceallevel=0
 
 " Set colorscheme
     if (has("termguicolors"))
