@@ -123,15 +123,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 
     " Valloric's highlighting for matching XML/HTML tags
-    Plug 'valloric/matchtagalways'
-      let g:mta_use_matchparen_group = 0
-      let g:mta_filetypes = {
-      \  'html': 1,
-      \  'xhtml': 1,
-      \  'xml': 1,
-      \  'javascript.jsx': 1,
-      \  'handlebars': 1
-      \}
+    " Plug 'valloric/matchtagalways'
+    "   let g:mta_use_matchparen_group = 0
+    "   let g:mta_filetypes = {
+    "   \  'html': 1,
+    "   \  'xhtml': 1,
+    "   \  'xml': 1,
+    "   \  'javascript.jsx': 1,
+    "   \  'handlebars': 1
+    "   \}
 
     " Handlebars filetype recognition
     Plug 'mustache/vim-mustache-handlebars'
@@ -277,7 +277,7 @@ set conceallevel=0
     endif
     set background=dark
 
-    colorscheme spacemacs-theme
+    " colorscheme spacemacs-theme
 
 " MacVim or GVim-specific settings
 if has('gui_running')
