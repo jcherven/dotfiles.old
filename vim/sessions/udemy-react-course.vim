@@ -1,6 +1,6 @@
 " ~/dotfiles/vim/sessions/udemy-react-course.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 18 January 2019 at 14:51:41.
+" Created by session.vim 2.13.1 on 18 January 2019 at 19:53:13.
 " Open this file in Vim and run :source % to restore your session.
 
 if exists('g:syntax_on') != 1 | syntax on | endif
@@ -16,17 +16,18 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Desktop/react-complete-guide/src
+cd ~/Desktop/react-complete-guide/src/containers
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/Desktop/react-complete-guide/src/App.js
-badd +0 ~/Desktop/react-complete-guide/src/Person/Person.css
-badd +0 ~/Desktop/react-complete-guide/src/Person/Person.js
+badd +1 ~/Desktop/react-complete-guide/src/App.js
+badd +1 ~/Desktop/react-complete-guide/src/Person/Person.css
+badd +1 ~/Desktop/react-complete-guide/src/Person/Person.js
+badd +0 ~/Desktop/react-complete-guide/src/containers/App.js
 argglobal
 silent! argdel *
-edit ~/Desktop/react-complete-guide/src/App.js
+edit ~/Desktop/react-complete-guide/src/containers/App.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -40,12 +41,12 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 109) / 218)
-exe 'vert 2resize ' . ((&columns * 92 + 109) / 218)
-exe 'vert 3resize ' . ((&columns * 93 + 109) / 218)
+exe 'vert 1resize ' . ((&columns * 31 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 87 + 106) / 213)
+exe 'vert 3resize ' . ((&columns * 93 + 106) / 213)
 argglobal
 enew
-" file ~/Desktop/react-complete-guide/NERD_tree_1
+" file ~/Desktop/react-complete-guide/src/NERD_tree_2
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -65,12 +66,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 72 - ((34 * winheight(0) + 35) / 70)
+let s:l = 6 - ((5 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-72
-normal! 05|
+6
+normal! 0
 wincmd w
 argglobal
 if bufexists('~/Desktop/react-complete-guide/src/Person/Person.js') | buffer ~/Desktop/react-complete-guide/src/Person/Person.js | else | edit ~/Desktop/react-complete-guide/src/Person/Person.js | endif
@@ -83,17 +84,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 5 - ((4 * winheight(0) + 35) / 70)
+let s:l = 1 - ((0 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
+1
 normal! 0
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 109) / 218)
-exe 'vert 2resize ' . ((&columns * 92 + 109) / 218)
-exe 'vert 3resize ' . ((&columns * 93 + 109) / 218)
+exe 'vert 1resize ' . ((&columns * 31 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 87 + 106) / 213)
+exe 'vert 3resize ' . ((&columns * 93 + 106) / 213)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
 "   silent exe 'bwipe ' . s:wipebuf
@@ -122,7 +123,7 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 70|vert 1resize 31|2resize 70|vert 2resize 92|3resize 70|vert 3resize 93|
+1resize 67|vert 1resize 31|2resize 67|vert 2resize 87|3resize 67|vert 3resize 93|
 2wincmd w
 tabnext 1
 if exists('s:wipebuf')

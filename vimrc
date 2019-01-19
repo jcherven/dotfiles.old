@@ -107,31 +107,19 @@ call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""
 """" Languages and syntax """"
 """"""""""""""""""""""""""""""
-  " Syntastic
-  " Plug 'scrooloose/syntastic'
-    " Beginner defaults
-    " set statusline+=%#warningmsg#
-    " set statusline+=%{SyntasticStatuslineFlag()}
-    " set statusline+=%*
-
-    " let g:syntastic_always_populate_loc_list = 1
-    " let g:syntastic_auto_loc_list = 1
-    " let g:syntastic_check_on_open = 1
-    " let g:syntastic_check_on_wq = 0
-
     " YouCompleteMe
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 
     " Valloric's highlighting for matching XML/HTML tags
-    " Plug 'valloric/matchtagalways'
-    "   let g:mta_use_matchparen_group = 0
-    "   let g:mta_filetypes = {
-    "   \  'html': 1,
-    "   \  'xhtml': 1,
-    "   \  'xml': 1,
-    "   \  'javascript.jsx': 1,
-    "   \  'handlebars': 1
-    "   \}
+    Plug 'valloric/matchtagalways'
+      let g:mta_use_matchparen_group = 0
+      let g:mta_filetypes = {
+      \  'html': 1,
+      \  'xhtml': 1,
+      \  'xml': 1,
+      \  'javascript.jsx': 1,
+      \  'handlebars': 1
+      \}
 
     " Handlebars filetype recognition
     Plug 'mustache/vim-mustache-handlebars'
@@ -139,8 +127,12 @@ call plug#begin('~/.vim/plugged')
     " PHP syntax for vim
     Plug 'stanangeloff/php.vim'
 
-    " Does a little bit of syntax highlighting for JS
+    " Javascript syntax highlighting. These two together get good results for some
+    " reason. PlugInstall yajs, then PlugInstall vim-javascript
     Plug 'pangloss/vim-javascript'
+
+    " Alternative syntax JS highlighting
+    Plug 'othree/yajs.vim'
 
     " JSX highlighting and indenting (recommends pangloss/vim-javascript)
     Plug 'mxw/vim-jsx'
