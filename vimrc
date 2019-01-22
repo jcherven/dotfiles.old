@@ -1,5 +1,7 @@
 set nocompatible              " required
 filetype off                  " required
+""""""""""""""""""""""""""""""""""""""""
+
 " Set default encoding
 set encoding=utf-8
 
@@ -16,22 +18,30 @@ call plug#begin('~/.vim/plugged')
 """" Interface Plugins """"
 """""""""""""""""""""""""""
 
-    " Spacemacs color theme
-    Plug 'jcherven/spacemacs-theme.vim'
+    " Spacemacs for web adapted from Vimterial_dark
+    Plug 'jcherven/spacemacs_web'
+
+    " Vimterial_dark color theme
+    Plug 'larsbs/vimterial_dark'
 
     " Airline status bar and associated plugins
     Plug 'bling/vim-airline'
       " Color theming for vim-airline
       Plug 'vim-airline/vim-airline-themes'
-      let g:airline_theme='violet'
+      let g:airline_theme='spacemacs_web'
+      " Enable the tabline displaying all buffers when only one tab is open
+      let g:airline#extensions#tabline#enabled = 1
+      " Show the buffer number
+      let g:airline#extensions#tabline#show_buffers = 1
+      let g:airline#extensions#tabline#buffer_nr_show = 1
       " Skip the text encoding string if it matches utf-8
       let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
       " Remove separators for empty sections
       let g:airline_skip_empty_sections = 1
-      " Enable the tabline displaying all buffers when only one tab is open
-      let g:airline#extensions#tabline#enabled = 1
       " Disable airline on FocusLost autocommand (e.g. when Vim loses focus)
       let g:airline_focuslost_inactive = 0
+      "Enable paste detection
+      let g:airline_detect_paste = 1
       " Customizable tab labels
       Plug 'mkitt/tabline.vim'
       " Enable taboo, a tab decoration builtin
@@ -57,6 +67,8 @@ call plug#begin('~/.vim/plugged')
       let g:NERDTreeDirArrows = 1
       " Automatically kill the buffer of a deleted file
       let g:NERDTreeAutoDeleteBuffer = 1
+      " Show dotfiles and hidden files
+      let g:NERDTreeShowHidden = 1
       " Git flags for NERDtree
       Plug 'Xuyuanp/nerdtree-git-plugin'
       " Copy path of selected node with 'm,b'
@@ -76,12 +88,23 @@ call plug#begin('~/.vim/plugged')
     " Pasting with indentation adjusted to the destination context
     Plug 'sickill/vim-pasta'
 
+    " Color definition visualization
+    Plug 'chrisbra/Colorizer'
+      let g:colorizer_auto_filetype='css,html,vim'
+      let g:colorizer_skip_comments = 1
+      let g:colorizer_colornames = 0
+      let g:colorizer_disable_bufleave = 1
+
+
     """""""""""""""""""""""""""""""
     """"""" Interface Command providers """"""
     """""""""""""""""""""""""""""""
     " Surround text; replace with `cs`, remove with `ds`, surround with
     " `ysiw`, visually surround with `S`
     Plug 'tpope/vim-surround'
+
+    " Comment selected lines; toggles on and off with gc (line) and gC (block)
+    Plug 'tpope/vim-commentary'
 
     " Highlights trailing whitespace, provides :FixWhitespace to delete it
     Plug 'bronson/vim-trailing-whitespace'
@@ -110,16 +133,16 @@ call plug#begin('~/.vim/plugged')
     " YouCompleteMe
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 
-    " Valloric's highlighting for matching XML/HTML tags
-    Plug 'valloric/matchtagalways'
-      let g:mta_use_matchparen_group = 0
-      let g:mta_filetypes = {
-      \  'html': 1,
-      \  'xhtml': 1,
-      \  'xml': 1,
-      \  'javascript.jsx': 1,
-      \  'handlebars': 1
-      \}
+    " " Valloric's highlighting for matching XML/HTML tags
+    " Plug 'valloric/matchtagalways'
+    "   let g:mta_use_matchparen_group = 0
+    "   let g:mta_filetypes = {
+    "   \  'html': 1,
+    "   \  'xhtml': 1,
+    "   \  'xml': 1,
+    "   \  'javascript.jsx': 1,
+    "   \  'handlebars': 1
+    "   \}
 
     " Handlebars filetype recognition
     Plug 'mustache/vim-mustache-handlebars'
@@ -127,28 +150,15 @@ call plug#begin('~/.vim/plugged')
     " PHP syntax for vim
     Plug 'stanangeloff/php.vim'
 
-    " Javascript syntax highlighting. These two together get good results for some
-    " reason. PlugInstall yajs, then PlugInstall vim-javascript
+    " Javascript syntax highlighting provider
     Plug 'pangloss/vim-javascript'
-
-    " Alternative syntax JS highlighting
-    Plug 'othree/yajs.vim'
 
     " JSX highlighting and indenting (recommends pangloss/vim-javascript)
     Plug 'mxw/vim-jsx'
 
-    " Does better syntax highlighting for JS
-    " Plug 'jelera/vim-javascript-syntax'
-
-    " Does even better syntax highlighting for js
-    " Plug 'othree/yajs.vim'
-
     " Javascript libraries syntax
     Plug 'othree/javascript-libraries-syntax.vim'
         let g:used_javascript_libs = "jquery,react,handlebars"
-
-    " Comment selected lines; toggles on and off with gc (line) and gC (block)
-    Plug 'tpope/vim-commentary'
 
     " Emmet snippets
     Plug 'mattn/emmet-vim'
@@ -263,13 +273,19 @@ set mouse=nv
 " Disable concealing of quotation marks in .json files
 set conceallevel=0
 
+" Customize gutter
+" Gutter width has space for linter symbols
+" set signcolumn=yes
+
 " Set colorscheme
     if (has("termguicolors"))
         set termguicolors
     endif
     set background=dark
 
-    colorscheme spacemacs-theme
+    " colorscheme spacemacs-theme
+    colorscheme spacemacs_web
+    " colorscheme vimterial_dark
 
 " MacVim or GVim-specific settings
 if has('gui_running')

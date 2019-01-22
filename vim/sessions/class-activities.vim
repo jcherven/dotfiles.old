@@ -1,6 +1,6 @@
 " ~/dotfiles/vim/sessions/class-activities.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 16 January 2019 at 13:04:48.
+" Created by session.vim 2.13.1 on 21 January 2019 at 13:51:51.
 " Open this file in Vim and run :source % to restore your session.
 
 if exists('g:syntax_on') != 1 | syntax on | endif
@@ -10,17 +10,33 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'spacemacs-theme' | colorscheme spacemacs-theme | endif
+if !exists('g:colors_name') || g:colors_name != 'spacemacs_web' | colorscheme spacemacs_web | endif
 call setqflist([])
 let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/28-Stu_DecrementCounter/Solved
+cd ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/30-Ins_FormsDemo/src/components/Form
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +13 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/30-Ins_FormsDemo/src/components/Form/index.js
+badd +1 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/30-Ins_FormsDemo/src/App.js
+badd +4 man://import(1)
+badd +5 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/31-Stu_FunWithForms/Unsolved/src/App.js
+badd +12 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/31-Stu_FunWithForms/Unsolved/src/components/Form/index.js
+badd +1 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/31-Stu_FunWithForms/README.md
+badd +1 ~/Desktop/mern-activities/src/App.js
+badd +30 ~/Desktop/mern-activities/src/components/Form/index.js
+badd +1 ~/Desktop/mern-activities/README.md
+badd +4 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/31-Stu_FunWithForms/Solved/src/components/Form/index.js
+badd +22 ~/Desktop/mern-activities/src/components/Form.js
+badd +6 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/20-react/20.1/01-Stu_FormalReview/Solved/src/components/Form.js
+badd +0 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/20-react/20.1/02-Ins_AJAX/src/App.js
+badd +1 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/20-react/20.1/02-Ins_AJAX/src/components/ResultList.js
+badd +12 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/20-react/20.1/02-Ins_AJAX/src/components/SearchForm.js
+badd +0 ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/20-react/20.1/02-Ins_AJAX/src/components/SearchResultContainer.js
 argglobal
 silent! argdel *
 set splitbelow splitright
@@ -31,7 +47,25 @@ set winminwidth=0
 set winwidth=1
 argglobal
 enew
-" file ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/28-Stu_DecrementCounter/Solved/NERD_tree_2
+" file ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/30-Ins_FormsDemo/src/components/Form/NERD_tree_2
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+tabnew
+set splitbelow splitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+enew
+" file ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/30-Ins_FormsDemo/src/components/Form/NERD_tree_3
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -60,7 +94,19 @@ let &so = s:so_save | let &siso = s:siso_save
 tabnext 1
 let s:bufnr_save = bufnr("%")
 let s:cwd_save = getcwd()
-NERDTree ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/28-Stu_DecrementCounter/Solved
+NERDTree ~/Desktop
+if !getbufvar(s:bufnr_save, '&modified')
+  let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
+  if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
+    silent execute 'bwipeout' s:bufnr_save
+  endif
+endif
+execute "cd" fnameescape(s:cwd_save)
+1wincmd w
+tabnext 2
+let s:bufnr_save = bufnr("%")
+let s:cwd_save = getcwd()
+NERDTree ~/Desktop/bootcamp/UCFVW201808FSF2/class-content/19-intro-react/19.3/30-Ins_FormsDemo/src/components/Form
 if !getbufvar(s:bufnr_save, '&modified')
   let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
   if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
