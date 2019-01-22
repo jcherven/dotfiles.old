@@ -47910,6 +47910,10 @@
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
 	<integer>0</integer>
+	<key>NeverWarnAboutShortLivedSessions_A1EE466D-CAA6-4A6E-B288-862CCDE5FE69</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_A1EE466D-CAA6-4A6E-B288-862CCDE5FE69_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
