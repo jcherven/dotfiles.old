@@ -89,11 +89,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'sickill/vim-pasta'
 
     " Color definition visualization
-    " Plug 'chrisbra/Colorizer'
-    "   let g:colorizer_auto_filetype='css,html,vim'
-    "   let g:colorizer_skip_comments = 1
-    "   let g:colorizer_colornames = 0
-    "   let g:colorizer_disable_bufleave = 1
+    Plug 'chrisbra/Colorizer'
+      let g:colorizer_auto_filetype='css,html,vim'
+      let g:colorizer_skip_comments = 1
+      let g:colorizer_colornames = 0
+      let g:colorizer_disable_bufleave = 1
 
 
     """""""""""""""""""""""""""""""
