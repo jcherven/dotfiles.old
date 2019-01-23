@@ -47840,7 +47840,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSColorPanelMode</key>
-	<string>1</string>
+	<string>7</string>
 	<key>NSColorPickerPreferredRGBEntryMode</key>
 	<integer>2</integer>
 	<key>NSColorPickerSlidersDefaults</key>
@@ -47861,8 +47861,8 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 303.000000, NO, NO</string>
-		<string>0.000000, 304.000000, 224.000000, 43.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 228.000000, 351.000000, NO, NO</string>
+		<string>0.000000, 352.000000, 228.000000, 43.000000, NO, NO</string>
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
@@ -47893,7 +47893,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>623 171 224 284 0 0 1440 878 </string>
+	<string>623 87 228 332 0 0 1440 878 </string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1386 790 445 94 0 0 2560 1418 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -47901,7 +47901,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>859 234 599 430 0 0 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>471 125 928 394 0 0 1440 878 </string>
+	<string>471 309 928 394 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 878 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -48085,13 +48085,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.50196081399917603</real>
+				<real>0.57453137639999996</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.12855249639999999</real>
 				<key>Red Component</key>
-				<real>0.50196081399917603</real>
+				<real>0.58105844259999995</real>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
@@ -48222,15 +48222,15 @@
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.028141505281690141</real>
+				<real>0.050000000000000003</real>
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.92549019607843142</real>
+				<real>0.21569153669999999</real>
 				<key>Red Component</key>
-				<real>0.70196078431372544</real>
+				<real>0.58188301320000002</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -48749,7 +48749,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-22T03:31:58Z</date>
+	<date>2019-01-23T05:43:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>

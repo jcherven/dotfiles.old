@@ -1,8 +1,3 @@
-# Terminal colors
-#    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-#    export CLICOLOR=1
-#    export LSCOLORS=ExFxBxDxCxegedabagacad
-
 # Path export for homebrew things
 export PATH=/usr/local/bin:$PATH
 
@@ -36,20 +31,14 @@ export PATH=$PATH:$MONGO_PATH/bin
 # bash-completion brew package
     [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# Homebrew shell completion
-#    if type brew 2&>/dev/null; then
-#      for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
-#        source "$completion_file"
-#      done
-#    fi
-
 # Set default editor to nvim
 export EDITOR=nvim
 
 # vi mode at the prompt
 set -o vi
 
-# Show editing mode in prompt (only works in bash 4)
-# set show-mode-in-prompt on
-
 export PATH=/usr/local/mysql/bin:$PATH
+
+# Case insensitive bash completion
+set completion-ignore-case on
+set show-all-if-ambiguous on
