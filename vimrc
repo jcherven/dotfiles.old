@@ -30,8 +30,8 @@ call plug#begin('~/.vim/plugged')
       Plug 'vim-airline/vim-airline-themes'
       let g:airline_theme='spacemacs_web'
       " Enable the tabline displaying all buffers when only one tab is open
-      let g:airline#extensions#tabline#enabled = 1
-      " Show the buffer number
+      let g:airline#extensions#tabline#enabled = 0
+      " Show the buffer number (not working?)
       let g:airline#extensions#tabline#show_buffers = 1
       let g:airline#extensions#tabline#buffer_nr_show = 1
       " Skip the text encoding string if it matches utf-8
@@ -57,7 +57,7 @@ call plug#begin('~/.vim/plugged')
       autocmd StdinReadPre * let s:std_in=1
       autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
       " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-      " Minimal mode
+      " Disable the extra heading lines
       let NERDTreeMinimalUI=1
       " Keep the NERDtree window on the left at all times
       let g:NERDTreeWinPos = "left"
@@ -71,7 +71,8 @@ call plug#begin('~/.vim/plugged')
       let g:NERDTreeShowHidden = 1
       " Git flags for NERDtree
       Plug 'Xuyuanp/nerdtree-git-plugin'
-      " Copy path of selected node with 'm,b'
+      " Adds a command to the 'm' menu for copying the absolute path of the
+      " highlighted node with 'b'
       Plug 'mortonfox/nerdtree-clip'
 
     " Automatic toggling of rel/abs line numbering in normal/insert modes
@@ -90,11 +91,11 @@ call plug#begin('~/.vim/plugged')
 
     " Color definition visualization
     Plug 'chrisbra/Colorizer'
-      let g:colorizer_auto_filetype='css,html,vim'
+      let g:colorizer_auto_color = 0
+      let g:colorizer_auto_filetype = 'css,html,php,vim'
       let g:colorizer_skip_comments = 1
       let g:colorizer_colornames = 0
       let g:colorizer_disable_bufleave = 1
-
 
     """""""""""""""""""""""""""""""
     """"""" Interface Command providers """"""
@@ -133,16 +134,16 @@ call plug#begin('~/.vim/plugged')
     " YouCompleteMe
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 
-    " " Valloric's highlighting for matching XML/HTML tags
-    " Plug 'valloric/matchtagalways'
-    "   let g:mta_use_matchparen_group = 0
-    "   let g:mta_filetypes = {
-    "   \  'html': 1,
-    "   \  'xhtml': 1,
-    "   \  'xml': 1,
-    "   \  'javascript.jsx': 1,
-    "   \  'handlebars': 1
-    "   \}
+    " Valloric's highlighting for matching XML/HTML tags
+    Plug 'valloric/matchtagalways'
+      let g:mta_use_matchparen_group = 0
+      let g:mta_filetypes = {
+      \  'html': 1,
+      \  'xhtml': 1,
+      \  'xml': 1,
+      \  'javascript.jsx': 1,
+      \  'handlebars': 1
+      \}
 
     " Handlebars filetype recognition
     Plug 'mustache/vim-mustache-handlebars'
@@ -153,10 +154,10 @@ call plug#begin('~/.vim/plugged')
     " Javascript syntax highlighting provider
     Plug 'pangloss/vim-javascript'
 
-    " JSX highlighting and indenting (recommends pangloss/vim-javascript)
+    " javascript.jsx syntax highlighting and indenting (recommends pangloss/vim-javascript)
     Plug 'mxw/vim-jsx'
 
-    " Javascript libraries syntax
+    " Javascript libraries syntax provider
     Plug 'othree/javascript-libraries-syntax.vim'
         let g:used_javascript_libs = "jquery,react,handlebars"
 
@@ -276,6 +277,9 @@ set conceallevel=0
 " Customize gutter
 " Gutter width has space for linter symbols
 " set signcolumn=yes
+
+" Allow crontab to be saved from vim
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
 " Set colorscheme
     if (has("termguicolors"))

@@ -1,8 +1,10 @@
 " ~/dotfiles/vim/sessions/gbooks-demo.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 23 January 2019 at 11:46:33.
+" Created by session.vim 2.13.1 on 24 January 2019 at 14:03:56.
 " Open this file in Vim and run :source % to restore your session.
 
+set guioptions=gmrL
+silent! set guifont=IBM\ Plex\ Mono:h11
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -13,30 +15,22 @@ endif
 if !exists('g:colors_name') || g:colors_name != 'spacemacs_web' | colorscheme spacemacs_web | endif
 call setqflist([])
 let SessionLoad = 1
+if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Desktop/gbooks-demo/client/src
+silent tabonly
+cd ~/
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 ~/Desktop/gbooks-demo/server.js
-badd +1 ~/Desktop/gbooks-demo/routes/api/index.js
-badd +13 ~/Desktop/gbooks-demo/routes/api/books.js
-badd +23 ~/Desktop/gbooks-demo/package.json
-badd +9 ~/Desktop/gbooks-demo/models/books.js
-badd +3 ~/Desktop/gbooks-demo/models/index.js
-badd +11 ~/Desktop/gbooks-demo/routes/index.js
-badd +11 ~/Desktop/gbooks-demo/controllers/booksController.js
-badd +18 ~/Desktop/gbooks-demo/client/public/index.html
-badd +23 ~/Desktop/gbooks-demo/client/public/results.html
-badd +1 ~/Desktop/gbooks-demo/client/src/pages/search.js
-badd +1 ~/Desktop/gbooks-demo/client/src/index.js
-badd +3 ~/Desktop/gbooks-demo/client/src/App.js
+badd +5 ~/Desktop/gbooks-demo/client/src/App.js
+badd +5 ~/Desktop/gbooks-demo/server.js
+badd +0 ~/Desktop/gbooks-demo/client/public/index.html
 argglobal
 silent! argdel *
-edit ~/Desktop/gbooks-demo/client/src/App.js
+edit ~/Desktop/gbooks-demo/client/public/index.html
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -47,11 +41,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 102) / 204)
-exe 'vert 2resize ' . ((&columns * 172 + 102) / 204)
+exe 'vert 1resize ' . ((&columns * 31 + 109) / 218)
+exe 'vert 2resize ' . ((&columns * 186 + 109) / 218)
 argglobal
 enew
-" file ~/Desktop/gbooks-demo/NERD_tree_1
+" file ~/NERD_tree_2
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -71,22 +65,22 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 18) / 36)
+let s:l = 11 - ((10 * winheight(0) + 49) / 99)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 019|
+11
+normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 102) / 204)
-exe 'vert 2resize ' . ((&columns * 172 + 102) / 204)
+exe 'vert 1resize ' . ((&columns * 31 + 109) / 218)
+exe 'vert 2resize ' . ((&columns * 186 + 109) / 218)
 tabnext 1
-if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
-set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFc
+set winheight=1 winwidth=20 shortmess=filnxtToOc
+set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
@@ -101,7 +95,7 @@ let &so = s:so_save | let &siso = s:siso_save
 tabnext 1
 let s:bufnr_save = bufnr("%")
 let s:cwd_save = getcwd()
-NERDTree ~/Desktop/gbooks-demo
+NERDTree ~/
 if !getbufvar(s:bufnr_save, '&modified')
   let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
   if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
@@ -109,8 +103,8 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 36|vert 1resize 31|2resize 36|vert 2resize 172|
-2wincmd w
+1resize 99|vert 1resize 31|2resize 99|vert 2resize 186|
+1wincmd w
 tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
