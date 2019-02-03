@@ -29,10 +29,22 @@
   purple="\[\033[0;35m\]"
   reset="\[\033[0m\]"
   # '\u' adds the name of the current user to the prompt
-  # '\$(__git_ps1)' adds git-related stuff
+  # '\$(__git_ps1)' adds current branch and change status
   # '\W' adds the name of the current directory
   export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 
+# Highlighted man page output. Color defs need tweaking.
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man $@
+}
 # bash-completion brew package
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
