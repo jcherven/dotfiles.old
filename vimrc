@@ -109,9 +109,6 @@ set signcolumn=no
 " Allow crontab to be saved from vim
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
-" Set vim's builtin terminal size
-set termwinsize=16x0
-
 " Set colorscheme
     if (has("termguicolors"))
       set termguicolors
