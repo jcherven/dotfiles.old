@@ -116,5 +116,10 @@
             ".js"
         ]
     },
-    "backgroundCover.opacity": 0.9
+    "backgroundCover.opacity": 0.9,
+    "prettier.jsxSingleQuote": true,
+    "prettier.trailingComma": "all",
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "npm.fetchOnlinePackageInfo": false
 }

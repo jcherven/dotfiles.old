@@ -142,8 +142,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'mxw/vim-jsx'
 
     " " Javascript libraries syntax provider
-    " Plug 'othree/javascript-libraries-syntax.vim'
-    "     let g:used_javascript_libs = "jquery,react,handlebars"
+    Plug 'othree/javascript-libraries-syntax.vim'
+        let g:used_javascript_libs = "jquery,react,handlebars"
 
     " " Emmet snippets
     " Plug 'mattn/emmet-vim'
