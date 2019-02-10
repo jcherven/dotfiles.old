@@ -120,8 +120,9 @@ Plug 'djoshea/vim-autoread'
 """"""""""""""""""""""""""""""
 """" Languages and syntax """"
 """"""""""""""""""""""""""""""
-" YouCompleteMe
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
+" YouCompleteMe (this slows down terminal vim a lot when enabled with syntax
+" highlighting)
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 
 " Valloric's highlighting for matching XML/HTML tags
 Plug 'valloric/matchtagalways'
