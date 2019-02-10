@@ -1,6 +1,15 @@
+""""""""""""""""""""""""""""""""""""""""
+""
+"" .vimrc
+""
+""""""""""""""""""""""""""""""""""""""""
+
 set nocompatible              " required
 filetype off                  " required
 """"""""""""""""""""""""""""""""""""""""
+
+" Map <leader> to spacebar
+map <SPACE> <leader>
 
 " Set default encoding
 set encoding=utf-8
@@ -12,7 +21,7 @@ set fileformats=unix,dos,mac
 set t_Co=256
 
 " don't redraw while executing macros
-  set lazyredraw
+set lazyredraw
 
 " syntax highlighting
 " syntax on
@@ -21,7 +30,7 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-" vim-plug plugin manager
+" vim-plug plugin manager and plugin declarations script
 source ~/dotfiles/vim/config/plugdef.vim
 
 " Powerful backspacing
@@ -99,9 +108,6 @@ nnoremap <C-H> <C-W><C-H>
 " Enable mouse interactions
 set mouse=nv
 
-" Disable concealing of quotation marks in .json files
-set cole=0
-
 " Customize gutter
 " Gutter width has space for linter symbols
 set signcolumn=no
@@ -116,6 +122,9 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
     set background=dark
     colorscheme spacemacs_web
+
+" Disable concealing of quotation marks in .json files
+set conceallevel=0
 
 " MacVim or GVim-specific settings
 if has('gui_running')
