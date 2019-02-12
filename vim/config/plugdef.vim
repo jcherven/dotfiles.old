@@ -30,7 +30,7 @@ Plug 'bling/vim-airline'
   " Enable taboo, a tab decoration builtin
   Plug 'gcmt/taboo.vim'
     let g:airline#extensions#taboo#enabled = 1
-    let g:taboo_tab_format = " %N:%P%m "
+    let g:taboo_tab_format = " %N:%P/%f %m "
   " Git wrapper
   Plug 'tpope/vim-fugitive'
 
@@ -39,8 +39,6 @@ Plug 'scrooloose/nerdtree'
   "Start NERDtree with a blank buffer on opening vim with no files specified
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  " Close vim if nerdtree is the last window left open
-  " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " Disable the extra heading lines
   let NERDTreeMinimalUI=1
   " Keep the NERDtree window on the left at all times
@@ -58,26 +56,18 @@ Plug 'scrooloose/nerdtree'
   " Adds a command to the 'm' menu for copying the absolute path of the
   " highlighted node with 'b'
   Plug 'mortonfox/nerdtree-clip'
-" Comment assistance
-Plug 'scrooloose/nerdcommenter'
 
 " Automatic toggling of rel/abs line numbering in normal/insert modes
 Plug 'jeffKreeftmeijer/vim-numbertoggle'
-
 " Indentation Guides
 Plug 'yggdroot/indentline'
-  " let g:indentLine_char = '│ '
   let g:indentLine_char = '▏'
-" Alternative chars, but these seem to display as a pipe for some reason ▎ █
-"
 " Transparent background in a windowed terminal
 Plug 'miyakogi/seiya.vim'
     let g:seiya_auto_enable=1
     let g:seiya_target_groups = has('nvim')? ['guibg'] : ['ctermbg']
-
 " Pasting with indentation adjusted to the destination context
 Plug 'sickill/vim-pasta'
-
 " Color definition visualization
 Plug 'chrisbra/Colorizer'
   let g:colorizer_auto_color = 0
@@ -86,34 +76,35 @@ Plug 'chrisbra/Colorizer'
   let g:colorizer_colornames = 0
   let g:colorizer_disable_bufleave = 1
 
-"""""""""""""""""""""""""""""""""""""""""""
-""""""" Interface Command providers """"""""
-"""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""" Plugin-related Interface Command providers """"""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle NERDTree with <C-n>
+map <C-n> :NERDTreeToggle<CR>
 " Surround text; replace with `cs`, remove with `ds`, surround with
 " `ysiw`, visually surround with `S`
 Plug 'tpope/vim-surround'
-
 " Comment selected lines; toggles on and off with gc (line) and gC (block)
 Plug 'tpope/vim-commentary'
-
 " Highlights trailing whitespace, provides :FixWhitespace to delete it
 Plug 'bronson/vim-trailing-whitespace'
-
 " Easymotion; provides `<leader><leader>'
 Plug 'easymotion/vim-easymotion'
-
 " Swap windows with `\ww`
 Plug 'wesq3/vim-windowswap'
-
 " Session and workspace manager; provides :SaveSession and :OpenSession
 Plug 'xolox/vim-session'
   let g:session_default_name = "session"
   " Required for vim-session
   Plug 'xolox/vim-misc'
-
 " Physics-based visual scrolling when using ctrl-d and ctrl-u
-Plug 'yuttie/comfortable-motion.vim'
-
+" Plug 'yuttie/comfortable-motion.vim'
+" Testing a smooth scroller"
+Plug 'terryma/vim-smooth-scroll'
+  noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+  noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+  noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+  noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 " Improved autoread checking
 Plug 'djoshea/vim-autoread'
 
@@ -123,7 +114,6 @@ Plug 'djoshea/vim-autoread'
 " YouCompleteMe (this slows down terminal vim a lot when enabled with syntax
 " highlighting)
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
-
 " Valloric's highlighting for matching XML/HTML tags
 Plug 'valloric/matchtagalways'
   let g:mta_use_matchparen_group = 0
@@ -134,23 +124,17 @@ Plug 'valloric/matchtagalways'
   \  'javascript.jsx': 1,
   \  'handlebars': 1
   \}
-
 " Handlebars filetype recognition
 Plug 'mustache/vim-mustache-handlebars'
-
 " Javascript syntax highlighting provider
 Plug 'pangloss/vim-javascript'
-
 " javascript.jsx syntax highlighting and indenting (recommends pangloss/vim-javascript)
 Plug 'mxw/vim-jsx'
-
 " " Javascript libraries syntax provider
 Plug 'othree/javascript-libraries-syntax.vim'
     let g:used_javascript_libs = "jquery,react,handlebars"
-
 " " Emmet snippets
 " Plug 'mattn/emmet-vim'
-
 " Close HTML tags when the closing bracket is typed, configured to work with jsx
 Plug 'alvan/vim-closetag'
   let g:closetag_filenames = '*.html, *.xhtml, *.js, *.jsx, *.handlebars, *.hbs, *.ejs'
@@ -161,14 +145,9 @@ Plug 'alvan/vim-closetag'
   " Shortcut key which places the cursor indented inside the closed tag
   let g:closetag_shortcut = '>'
   let g:closetag_close_shortcut = '<leader>>'
-
 " Automatic closing of quotes, parens, brackets, etc w syntax awareness
 Plug 'jiangmiao/auto-pairs'
-
-" " Tab completion based on searching the current buffer
-" Plug 'ervandew/supertab'
-"
-" Fix conceal level so quotes show in json
-set cole=0
+" Tab completion based on searching the current buffer
+Plug 'ervandew/supertab'
 
 call plug#end()

@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""
 ""
 "" .vimrc
+"" dependencies: ./vim/config/plugdef.vim
 ""
 """"""""""""""""""""""""""""""""""""""""
 
@@ -104,6 +105,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Buffer navigations
+
+" Vim Tab Navigations"
+nnoremap th :tabprev<CR>
+nnoremap tl :tabnext<CR>
 
 " Enable mouse interactions
 set mouse=nv
