@@ -1,8 +1,10 @@
 " ~/dotfiles/vim/sessions/crux-client.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 11 February 2019 at 13:03:30.
+" Created by session.vim 2.13.1 on 16 February 2019 at 23:05:53.
 " Open this file in Vim and run :source % to restore your session.
 
+set guioptions=egmrL
+silent! set guifont=IBM\ Plex\ Mono:h11
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -13,23 +15,24 @@ endif
 if !exists('g:colors_name') || g:colors_name != 'spacemacs_web' | colorscheme spacemacs_web | endif
 call setqflist([])
 let SessionLoad = 1
+if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Desktop/crux/client/src/components/layout
+silent tabonly
+cd ~/Desktop/crux/client/src/components/auth
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 ~/Desktop/crux/client/src/components/layout/Navbar.js
-badd +1 ~/Desktop/crux/client/src/App.js
-badd +1 ~/Desktop/crux/client/src/components/layout/CronWrapper.js
-badd +1 ~/Desktop/crux/client/src/components/layout/Footer.js
-badd +1 ~/Desktop/crux/client/src/components/auth/Login.js
-badd +1 ~/Desktop/crux/client/src/components/auth/Reg.js
 argglobal
-silent! argdel *
+%argdel
 set stal=2
+tabnew
+tabnew
+tabnew
+tabnew
+tabrewind
 edit ~/Desktop/crux/client/src/components/layout/Navbar.js
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -44,77 +47,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
-argglobal
-enew
-" file ~/Desktop/crux/client/src/components/layout/NERD_tree_2
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-wincmd w
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
-argglobal
-if bufexists('~/Desktop/crux/client/src/App.js') | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 027|
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
-tabedit ~/Desktop/crux/client/src/components/layout/CronWrapper.js
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
-wincmd w
-wincmd w
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
 argglobal
 enew
 " file ~/Desktop/crux/client/src/components/layout/NERD_tree_3
@@ -137,15 +72,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 6 - ((5 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+6
 normal! 0
 wincmd w
 argglobal
-if bufexists('~/Desktop/crux/client/src/App.js') | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
+if bufexists("~/Desktop/crux/client/src/App.js") | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -155,17 +90,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 46 - ((22 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+46
+normal! 016|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
-tabedit ~/Desktop/crux/client/src/components/layout/Footer.js
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
+tabnext
+edit ~/Desktop/crux/client/src/components/layout/CronWrapper.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -179,9 +115,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
 argglobal
 enew
 " file ~/Desktop/crux/client/src/components/layout/NERD_tree_4
@@ -204,7 +140,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -212,7 +148,7 @@ normal! zt
 normal! 0
 wincmd w
 argglobal
-if bufexists('~/Desktop/crux/client/src/App.js') | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
+if bufexists("~/Desktop/crux/client/src/App.js") | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -222,17 +158,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 018|
+normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
-tabedit ~/Desktop/crux/client/src/components/auth/Login.js
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
+tabnext
+edit ~/Desktop/crux/client/src/components/layout/Footer.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -246,9 +183,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
 argglobal
 enew
 " file ~/Desktop/crux/client/src/components/layout/NERD_tree_5
@@ -271,7 +208,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -279,7 +216,7 @@ normal! zt
 normal! 0
 wincmd w
 argglobal
-if bufexists('~/Desktop/crux/client/src/App.js') | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
+if bufexists("~/Desktop/crux/client/src/App.js") | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -289,17 +226,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
-normal! 0
+normal! 018|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
-tabedit ~/Desktop/crux/client/src/components/auth/Reg.js
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
+tabnext
+edit ~/Desktop/crux/client/src/components/auth/Login.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -313,9 +251,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
 argglobal
 enew
 " file ~/Desktop/crux/client/src/components/layout/NERD_tree_6
@@ -338,7 +276,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -346,7 +284,7 @@ normal! zt
 normal! 0
 wincmd w
 argglobal
-if bufexists('~/Desktop/crux/client/src/App.js') | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
+if bufexists("~/Desktop/crux/client/src/App.js") | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -356,28 +294,105 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 41) / 82)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 114) / 228)
-exe 'vert 2resize ' . ((&columns * 95 + 114) / 228)
-exe 'vert 3resize ' . ((&columns * 100 + 114) / 228)
-tabnext 1
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
+tabnext
+edit ~/Desktop/crux/client/src/components/auth/Reg.js
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
+wincmd w
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
+argglobal
+enew
+" file ~/Desktop/crux/client/src/components/layout/NERD_tree_7
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+wincmd w
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 16 - ((8 * winheight(0) + 21) / 43)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+16
+normal! 0
+wincmd w
+argglobal
+if bufexists("~/Desktop/crux/client/src/App.js") | buffer ~/Desktop/crux/client/src/App.js | else | edit ~/Desktop/crux/client/src/App.js | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 87) / 174)
+exe 'vert 2resize ' . ((&columns * 71 + 87) / 174)
+exe 'vert 3resize ' . ((&columns * 70 + 87) / 174)
+tabnext 5
 set stal=1
-if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+badd +1 ~/Desktop/crux/client/src/components/layout/Navbar.js
+badd +1 ~/Desktop/crux/client/src/App.js
+badd +1 ~/Desktop/crux/client/src/components/layout/CronWrapper.js
+badd +1 ~/Desktop/crux/client/src/components/layout/Footer.js
+badd +1 ~/Desktop/crux/client/src/components/auth/Login.js
+badd +1 ~/Desktop/crux/client/src/components/auth/Reg.js
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
-set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFc
+set winheight=1 winwidth=20 shortmess=filnxtToOFc
+set winminheight=1 winminwidth=1
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
+nohlsearch
 
 " Support for special windows like quick-fix and plug-in windows.
 " Everything down here is generated by vim-session (not supported
@@ -395,7 +410,7 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 82|vert 1resize 31|2resize 82|vert 2resize 95|3resize 82|vert 3resize 100|
+1resize 43|vert 1resize 31|2resize 43|vert 2resize 71|3resize 43|vert 3resize 70|
 1wincmd w
 tabnext 2
 let s:bufnr_save = bufnr("%")
@@ -408,7 +423,7 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 82|vert 1resize 31|2resize 82|vert 2resize 95|3resize 82|vert 3resize 100|
+1resize 43|vert 1resize 31|2resize 43|vert 2resize 71|3resize 43|vert 3resize 70|
 1wincmd w
 tabnext 3
 let s:bufnr_save = bufnr("%")
@@ -421,7 +436,7 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 82|vert 1resize 31|2resize 82|vert 2resize 95|3resize 82|vert 3resize 100|
+1resize 43|vert 1resize 31|2resize 43|vert 2resize 71|3resize 43|vert 3resize 70|
 1wincmd w
 tabnext 4
 let s:bufnr_save = bufnr("%")
@@ -434,7 +449,7 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 82|vert 1resize 31|2resize 82|vert 2resize 95|3resize 82|vert 3resize 100|
+1resize 43|vert 1resize 31|2resize 43|vert 2resize 71|3resize 43|vert 3resize 70|
 1wincmd w
 tabnext 5
 let s:bufnr_save = bufnr("%")
@@ -447,9 +462,9 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 82|vert 1resize 31|2resize 82|vert 2resize 95|3resize 82|vert 3resize 100|
+1resize 43|vert 1resize 31|2resize 43|vert 2resize 71|3resize 43|vert 3resize 70|
 2wincmd w
-tabnext 1
+tabnext 5
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')
