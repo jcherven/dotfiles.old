@@ -18,7 +18,7 @@
     "terminal.external.windowsExec": "cmd.exe",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Spacemacs - dark",
+    "workbench.colorTheme": "Nier: Automata Light",
     "vim.mouseSelectionGoesIntoVisualMode": true,
     "vim.showcmd": true,
     "vim.showmodename": true,
@@ -110,7 +110,6 @@
     "vim.statusBarColorControl": true,
     "terminal.integrated.fontSize": 11,
     "window.zoomLevel": -0.5,
-    "backgroundCover.imagePath": "/Users/jums/Pictures/wallpaper_station_sakura_blur.jpg",
     "rainbowString": {
         "extensions": [
             ".js"
@@ -121,5 +120,6 @@
     "prettier.trailingComma": "all",
     "workbench.settings.enableNaturalLanguageSearch": false,
     "update.enableWindowsBackgroundUpdates": false,
-    "npm.fetchOnlinePackageInfo": false
+    "npm.fetchOnlinePackageInfo": false,
+    "backgroundCover.enabled": false
 }

@@ -37,7 +37,7 @@
   # '\$(__git_ps1)'   current branch and change status
   # '\W'              current base directory
   # export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
-  export PS1="$jummipurple\u$jummigreen\$(__git_ps1)$jummiblue \W $ $reset"
+  export PS1="$jummipurple\$(__git_ps1)$jummiblue \W $ $reset"
 
 # Highlighted man page output.
 man() {
