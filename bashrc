@@ -9,7 +9,7 @@
     # sql things
     export PATH=/usr/local/mysql/bin:$PATH
   # Set default editor to nvim
-  export EDITOR=vim
+  export EDITOR=nvim
 
 # Bash command history
     # export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> "$HOME"/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
