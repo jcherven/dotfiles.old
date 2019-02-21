@@ -9,7 +9,7 @@
     # sql things
     export PATH=/usr/local/mysql/bin:$PATH
   # Set default editor to nvim
-  export EDITOR=nvim
+  export EDITOR=vim
 
 # Bash command history
     # export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> "$HOME"/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
@@ -24,16 +24,22 @@
   source ~/git-prompt.sh
   export GIT_PS1_SHOWDIRTYSTATE=1
   # Git prompt color definitions
-  green="\[\033[0;32m\]"
-  blue="\[\033[0;34m\]"
-  purple="\[\033[0;35m\]"
+  # Define ANSI colors like this:
+  # \[\033[0;<ansivalue>m]
+  # Define 256 colors like this:
+  # \[\033[38;5;<rgbvalue>m\]
+  jummigreen="\[\033[38;5;35m\]"
+  jummiblue="\[\033[38;5;75m\]"
+  jummipurple="\[\033[38;5;133m\]"
+  # reset for normal colored command input
   reset="\[\033[0m\]"
-  # '\u' adds the name of the current user to the prompt
-  # '\$(__git_ps1)' adds current branch and change status
-  # '\W' adds the name of the current directory
-  export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
+  # '\u'              current username
+  # '\$(__git_ps1)'   current branch and change status
+  # '\W'              current base directory
+  # export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
+  export PS1="$jummipurple\u$jummigreen\$(__git_ps1)$jummiblue \W $ $reset"
 
-# Highlighted man page output. Color defs need tweaking.
+# Highlighted man page output.
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -47,7 +53,6 @@ man() {
 }
 # bash-completion brew package
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
 
 # vi mode at the prompt
 set -o vi

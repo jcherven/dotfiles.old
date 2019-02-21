@@ -57,6 +57,14 @@ Plug 'scrooloose/nerdtree'
   " highlighted node with 'b'
   Plug 'mortonfox/nerdtree-clip'
 
+" Send contents of one buffer to another tmux pane
+" Plug 'jgdavey/tslime.vim'
+"   let g:tslime_always_current_session = 1
+"   let g:tslime_always_current_window = 1
+"   " keybindings for tslime
+"   vmap <Leader>s <Plug>SendSelectionToTmux
+"   nmap <Leader>s <Plug>NormalModeSendToTmux
+"   nmap <C-c>r <Plug>SetTmuxVars
 " Automatic toggling of rel/abs line numbering in normal/insert modes
 Plug 'jeffKreeftmeijer/vim-numbertoggle'
 " Indentation Guides
@@ -98,13 +106,13 @@ Plug 'xolox/vim-session'
   " Required for vim-session
   Plug 'xolox/vim-misc'
 " Physics-based visual scrolling when using ctrl-d and ctrl-u
-" Plug 'yuttie/comfortable-motion.vim'
-" Testing a smooth scroller"
-Plug 'terryma/vim-smooth-scroll'
-  noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-  noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-  noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-  noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+Plug 'yuttie/comfortable-motion.vim'
+" Testing a smooth scroller; doesn't work when scrolling visual mode
+" Plug 'terryma/vim-smooth-scroll'
+"   noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+"   noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+"   noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+"   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 " Improved autoread checking
 Plug 'djoshea/vim-autoread'
 
@@ -145,6 +153,8 @@ Plug 'alvan/vim-closetag'
   " Shortcut key which places the cursor indented inside the closed tag
   let g:closetag_shortcut = '>'
   let g:closetag_close_shortcut = '<leader>>'
+" Structured editing of Lisp S-Expressions
+Plug 'vim-scripts/paredit.vim'
 " Automatic closing of quotes, parens, brackets, etc w syntax awareness
 Plug 'jiangmiao/auto-pairs'
 " Tab completion based on searching the current buffer

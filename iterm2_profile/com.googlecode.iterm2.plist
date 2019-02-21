@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -48378,13 +48380,6 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x68-0x80000</key>
-		<dict>
-			<key>Action</key>
-			<integer>39</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
 		<key>0x6a-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -48403,13 +48398,6 @@
 		<dict>
 			<key>Action</key>
 			<integer>19</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
-		<key>0x6c-0x80000</key>
-		<dict>
-			<key>Action</key>
-			<integer>32</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -48585,15 +48573,15 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>1027 579 228 280 0 0 2560 1418 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>2496 382 445 77 1440 0 2560 1440 </string>
+	<string>351 429 445 77 0 0 2560 1418 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 769 620 392 0 0 2560 1418 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>859 234 606 469 0 0 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1595 637 796 486 1440 0 2560 1418 </string>
+	<string>113 635 770 429 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2472 25 1510 1379 1440 0 2560 1418 </string>
+	<string>1160 25 1384 1379 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>528 307 572 376 0 0 1440 878 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -48835,6 +48823,8 @@
 				<key>Red Component</key>
 				<real>0.50196081399917603</real>
 			</dict>
+			<key>Application Keypad Allowed</key>
+			<false/>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
@@ -48972,6 +48962,8 @@
 			<real>0.98448677522590355</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Text</key>
+			<string></string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -49286,7 +49278,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>IBMPlexMono 11</string>
+			<string>Perplexed-Normal 11</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -49330,6 +49322,15 @@
 				<real>0.30196079611778259</real>
 				<key>Red Component</key>
 				<real>0.364705890417099</real>
+			</dict>
+			<key>Semantic History</key>
+			<dict>
+				<key>action</key>
+				<string>best editor</string>
+				<key>editor</key>
+				<string>com.sublimetext.3</string>
+				<key>text</key>
+				<string></string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -49398,12 +49399,16 @@
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
+	<key>NoSyncInstallUtilitiesPackage</key>
+	<true/>
+	<key>NoSyncInstallUtilitiesPackage_selection</key>
+	<integer>0</integer>
 	<key>NoSyncInstallationId</key>
 	<string>DD859FBC-5FF6-4098-BF1A-95B2623D43CD</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -49416,6 +49421,8 @@
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>0</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -49466,7 +49473,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-17T01:21:02Z</date>
+	<date>2019-02-19T01:22:18Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -49476,7 +49483,7 @@
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
-	<true/>
+	<false/>
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
@@ -49486,7 +49493,7 @@
 	<key>SwitchPaneModifier</key>
 	<integer>9</integer>
 	<key>SwitchTabModifier</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>9</integer>
 	<key>TabStyleWithAutomaticOption</key>
@@ -49500,6 +49507,8 @@
 		<string>Command History</string>
 		<string>Jobs</string>
 	</array>
+	<key>URLHandlersByGuid</key>
+	<dict/>
 	<key>UseBorder</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
