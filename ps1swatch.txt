@@ -1,11 +1,10 @@
-username
 #bc6ec5
   #af5faf   133
 
-git branch + status
 #2d9574
   #00af5f   035
 
-base dir
 #4f97d7
   #5fafff   075
+
+

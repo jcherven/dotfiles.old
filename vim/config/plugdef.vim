@@ -93,7 +93,7 @@ map <C-n> :NERDTreeToggle<CR>
 " `ysiw`, visually surround with `S`
 Plug 'tpope/vim-surround'
 " Comment selected lines; toggles on and off with gc (line) and gC (block)
-Plug 'tpope/vim-commentary'
+ Plug 'tpope/vim-commentary'
 " Highlights trailing whitespace, provides :FixWhitespace to delete it
 Plug 'bronson/vim-trailing-whitespace'
 " Easymotion; provides `<leader><leader>'
@@ -106,7 +106,7 @@ Plug 'xolox/vim-session'
   " Required for vim-session
   Plug 'xolox/vim-misc'
 " Physics-based visual scrolling when using ctrl-d and ctrl-u
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 " Testing a smooth scroller; doesn't work when scrolling visual mode
 " Plug 'terryma/vim-smooth-scroll'
 "   noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
@@ -138,7 +138,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
 " javascript.jsx syntax highlighting and indenting (recommends pangloss/vim-javascript)
 Plug 'mxw/vim-jsx'
-" " Javascript libraries syntax provider
+" Javascript libraries syntax provider
 Plug 'othree/javascript-libraries-syntax.vim'
     let g:used_javascript_libs = "jquery,react,handlebars"
 " " Emmet snippets

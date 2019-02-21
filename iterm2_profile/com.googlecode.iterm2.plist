@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdjustWindowForFontSizeChange</key>
+	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -48367,6 +48369,8 @@
 	<false/>
 	<key>DoubleClickPerformsSmartSelection</key>
 	<false/>
+	<key>EnableDivisionView</key>
+	<false/>
 	<key>EnableProxyIcon</key>
 	<true/>
 	<key>FocusFollowsMouse</key>
@@ -48579,14 +48583,18 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>859 234 606 469 0 0 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>113 635 770 429 0 0 2560 1418 </string>
+	<string>1806 547 1018 447 1440 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1160 25 1384 1379 0 0 2560 1418 </string>
+	<string>3109 26 871 1378 1440 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>528 307 572 376 0 0 1440 878 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
+	<integer>0</integer>
+	<key>NeverWarnAboutShortLivedSessions_3B4298D9-6179-4DCF-AEAC-E9020096B314</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_3B4298D9-6179-4DCF-AEAC-E9020096B314_selection</key>
 	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_A1EE466D-CAA6-4A6E-B288-862CCDE5FE69</key>
 	<true/>
@@ -49380,7 +49388,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<true/>
+			<false/>
 			<key>Use Tab Color</key>
 			<true/>
 			<key>Use Underline Color</key>
@@ -49390,7 +49398,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/jums/Desktop</string>
 		</dict>
@@ -49473,7 +49481,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-19T01:22:18Z</date>
+	<date>2019-02-21T01:22:16Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -49500,6 +49508,10 @@
 	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalMargin</key>
+	<integer>25</integer>
+	<key>TerminalVMargin</key>
+	<integer>25</integer>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Recent Directories</string>
@@ -49510,11 +49522,13 @@
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
-	<true/>
+	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>Window Arrangements</key>
 	<dict/>
+	<key>WindowNumber</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string></string>
 	<key>disableMetalWhenUnplugged</key>
