@@ -80,7 +80,7 @@ set number
 set autochdir
 " autocmd Bufenter * silent! lcd %:p:h
 
-" Clipboard
+" Use clipboard
 set clipboard=unnamed
 
 " Cursor settings
@@ -106,12 +106,16 @@ nnoremap <C-H> <C-W><C-H>
 
 " Buffer navigations
 
-" Vim Tab Navigations"
+" Vim Tab (layout) Navigations"
 nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
 
-" Enable mouse interactions
-set mouse=nv
+" Bind : to space for Ex commands
+" : will still be available as normal
+noremap <space> :
+
+" Enable mouse interactions in normal, visual, and insert modes
+set mouse=nvi
 
 " Customize gutter
 " Gutter width has space for linter symbols
@@ -120,13 +124,15 @@ set signcolumn=no
 " Allow crontab to be saved from vim
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
-" Set colorscheme
-    if (has("termguicolors"))
-      set termguicolors
-    endif
+" Set 24-bit color
+if (has("termguicolors"))
+  set termguicolors
+endif
 
-    set background=dark
-    colorscheme spacemacs_web
+set background=dark
+
+" Must be called after plugins are installed and after set termguicolors
+colorscheme spacemacs_web
 
 " Disable concealing of quotation marks in .json files
 set conceallevel=0
@@ -134,7 +140,7 @@ set conceallevel=0
 " MacVim or GVim-specific settings
 if has('gui_running')
     " Set font
-    set guifont=IBM\ Plex\ Mono:h11
+    set guifont=Perplexed:h11
     " Set transparancy on GUI window
     set transparency:8
     set blurradius:16
