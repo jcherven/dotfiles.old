@@ -37,8 +37,11 @@ source ~/dotfiles/vim/config/plugdef.vim
 " Powerful backspacing
 set backspace=indent,eol,start
 
-" Hide current mode since vim-airline is being used
-set noshowmode
+" Tabline presence; 2: always, 1: only if 2 or more tabs
+set showtabline=2
+
+" Display current mode if in insert, replace, or visual
+set showmode
 
 " Automatically reread changed files without asking
 set autoread
@@ -131,13 +134,11 @@ endif
 
 set background=dark
 
-" Colorscheme must be set after plugins are installed and set termguicolors
+"" Colorscheme must be set after plugins are installed and set termguicolors
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256 " Access colors present in 256 colorspace
   source ~/.vimrc_background
 endif
-
-" colorscheme spacemacs_web
 
 " Disable concealing of quotation marks in .json files
 " Note: this gets overrided by the indentation marker plugin

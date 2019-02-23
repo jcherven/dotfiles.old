@@ -161,6 +161,6 @@ Plug 'vim-scripts/paredit.vim'
 " Automatic closing of quotes, parens, brackets, etc w syntax awareness
 Plug 'jiangmiao/auto-pairs'
 " Tab completion based on searching the current buffer
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 call plug#end()
