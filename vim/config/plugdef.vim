@@ -5,27 +5,30 @@ call plug#begin('~/.vim/plugged')
 """""""""""""""""""""""""""
 
 " Spacemacs for web adapted from Vimterial_dark
-Plug 'jcherven/spacemacs_web'
+" Plug 'jcherven/spacemacs_web'
+
+" Helper for the base16 theme building architecture
+Plug 'chriskempson/base16-vim'
 
 " Airline status bar and associated plugins
-Plug 'bling/vim-airline'
-  " Color theming for vim-airline
-  Plug 'vim-airline/vim-airline-themes'
-  let g:airline_theme='spacemacs_web'
-  " Enable the tabline displaying all buffers when only one tab is open
-  let g:airline#extensions#tabline#enabled = 0
-  " Show the buffer number (not working?)
-  let g:airline#extensions#tabline#show_buffers = 1
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  " Skip the text encoding string if it matches utf-8
-  let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-  " Remove separators for empty sections
-  let g:airline_skip_empty_sections = 1
-  " Disable airline on FocusLost autocommand (e.g. when Vim loses focus)
-  let g:airline_focuslost_inactive = 0
-  "Enable paste detection
-  let g:airline_detect_paste = 1
-  " Customizable tab labels
+"Plug 'bling/vim-airline'
+"  " Color theming for vim-airline
+"  Plug 'vim-airline/vim-airline-themes'
+"  let g:airline_theme='spacemacs_web'
+"  " Enable the tabline displaying all buffers when only one tab is open
+"  let g:airline#extensions#tabline#enabled = 0
+"  " Show the buffer number (not working?)
+"  let g:airline#extensions#tabline#show_buffers = 1
+"  let g:airline#extensions#tabline#buffer_nr_show = 1
+"  " Skip the text encoding string if it matches utf-8
+"  let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+"  " Remove separators for empty sections
+"  let g:airline_skip_empty_sections = 1
+"  " Disable airline on FocusLost autocommand (e.g. when Vim loses focus)
+"  let g:airline_focuslost_inactive = 0
+"  "Enable paste detection
+"  let g:airline_detect_paste = 1
+"  " Customizable tab labels
   Plug 'mkitt/tabline.vim'
   " Enable taboo, a tab decoration builtin
   Plug 'gcmt/taboo.vim'
@@ -106,7 +109,7 @@ Plug 'xolox/vim-session'
   " Required for vim-session
   Plug 'xolox/vim-misc'
 " Physics-based visual scrolling when using ctrl-d and ctrl-u
-" Plug 'yuttie/comfortable-motion.vim'
+Plug 'yuttie/comfortable-motion.vim'
 " Testing a smooth scroller; doesn't work when scrolling visual mode
 " Plug 'terryma/vim-smooth-scroll'
 "   noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>

@@ -20,6 +20,12 @@
   # neovim is vim for my purposes
   alias vim='nvim'
 
+# Define colors via script instead of term theme with Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+  [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+    eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 # Git-friendly command prompt
   source ~/git-prompt.sh
   export GIT_PS1_SHOWDIRTYSTATE=1
@@ -28,17 +34,24 @@
   # \[\033[0;<ansivalue>m]
   # Define 256 colors like this:
   # \[\033[38;5;<rgbvalue>m\]
-  jummigreen="\[\033[38;5;35m\]"
-  jummiblue="\[\033[38;5;75m\]"
-  jummipurple="\[\033[38;5;133m\]"
+  # Custom 256 color definitions based on jummiterm
+  # jummigreen="\[\033[38;5;35m\]"
+  # jummiblue="\[\033[38;5;75m\]"
+  # jummipurple="\[\033[38;5;133m\]"
+  # Grab terminal colors
+  green="\[\033[0;32m\]"
+  blue="\[\033[0;34m\]"
+  purple="\[\033[0;35m\]"
   # reset for normal colored command input
   reset="\[\033[0m\]"
   # '\u'              current username
   # '\$(__git_ps1)'   current branch and change status
   # '\W'              current base directory
-  # export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
-  export PS1="$jummipurple\u$jummigreen\$(__git_ps1)$jummiblue \W $ $reset"
-
+  # Uncolored prompt with username, git branch+status, and base dir
+  # export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+  # Jummiterm-based prompt
+  # export PS1="$jummipurple\u$jummigreen\$(__git_ps1)$jummiblue \W $ $reset"
+  export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 # Highlighted man page output.
 man() {
   env \

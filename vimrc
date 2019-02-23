@@ -131,11 +131,17 @@ endif
 
 set background=dark
 
-" Must be called after plugins are installed and after set termguicolors
-colorscheme spacemacs_web
+" Colorscheme must be set after plugins are installed and set termguicolors
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256 " Access colors present in 256 colorspace
+  source ~/.vimrc_background
+endif
+
+" colorscheme spacemacs_web
 
 " Disable concealing of quotation marks in .json files
-set conceallevel=0
+" Note: this gets overrided by the indentation marker plugin
+" set conceallevel=0
 
 " MacVim or GVim-specific settings
 if has('gui_running')
