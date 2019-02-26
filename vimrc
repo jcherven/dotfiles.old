@@ -41,7 +41,7 @@ set backspace=indent,eol,start
 set showtabline=2
 
 " Display current mode if in insert, replace, or visual
-set showmode
+set noshowmode
 
 " Automatically reread changed files without asking
 set autoread

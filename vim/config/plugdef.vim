@@ -10,32 +10,37 @@ call plug#begin('~/.vim/plugged')
 " Helper for the base16 theme building architecture
 Plug 'chriskempson/base16-vim'
 
-" Airline status bar and associated plugins
-"Plug 'bling/vim-airline'
-"  " Color theming for vim-airline
-"  Plug 'vim-airline/vim-airline-themes'
-"  let g:airline_theme='spacemacs_web'
-"  " Enable the tabline displaying all buffers when only one tab is open
-"  let g:airline#extensions#tabline#enabled = 0
-"  " Show the buffer number (not working?)
-"  let g:airline#extensions#tabline#show_buffers = 1
-"  let g:airline#extensions#tabline#buffer_nr_show = 1
-"  " Skip the text encoding string if it matches utf-8
-"  let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-"  " Remove separators for empty sections
-"  let g:airline_skip_empty_sections = 1
-"  " Disable airline on FocusLost autocommand (e.g. when Vim loses focus)
-"  let g:airline_focuslost_inactive = 0
-"  "Enable paste detection
-"  let g:airline_detect_paste = 1
-"  " Customizable tab labels
-  Plug 'mkitt/tabline.vim'
-  " Enable taboo, a tab decoration builtin
-  Plug 'gcmt/taboo.vim'
-    let g:airline#extensions#taboo#enabled = 1
-    let g:taboo_tab_format = " %N:%P/%f %m "
-  " Git wrapper
-  Plug 'tpope/vim-fugitive'
+" Lightline status bar
+Plug 'itchyny/lightline.vim'
+"   " Disable the default mode indicator
+  set noshowmode
+  let g:lightline = {
+        \ 'colorscheme': 'PaperColor_dark',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'modified', 'readonly' ], [ 'absolutepath' ] ],
+        \   'right': [ ['percent'], ['lineinfo'], ['bufnum'],  ['filetype'] ]
+        \ },
+        \ 'inactive': {
+        \   'left': [ ['absolutepath'] ],
+        \   'right': [ ['percent'], ['lineinfo'], ['bufnum'], ['filetype'] ]
+        \},
+        \ 'component_function': {
+        \   'gitbranch': 'fugitive#head',
+        \ },
+        \ 'component': {
+        \   'bufnum': 'b%n'
+        \}
+        \}
+
+" Customizable tab labels
+Plug 'mkitt/tabline.vim'
+" Enable taboo, a tab decoration builtin
+Plug 'gcmt/taboo.vim'
+  let g:airline#extensions#taboo#enabled = 1
+  let g:taboo_tab_format = " %N:%P/%f %m "
+
+" Git wrapper
+Plug 'tpope/vim-fugitive'
 
 " File system explorer sidebar
 Plug 'scrooloose/nerdtree'
@@ -68,6 +73,7 @@ Plug 'scrooloose/nerdtree'
 "   vmap <Leader>s <Plug>SendSelectionToTmux
 "   nmap <Leader>s <Plug>NormalModeSendToTmux
 "   nmap <C-c>r <Plug>SetTmuxVars
+"
 " Automatic toggling of rel/abs line numbering in normal/insert modes
 Plug 'jeffKreeftmeijer/vim-numbertoggle'
 " Indentation Guides
@@ -110,12 +116,6 @@ Plug 'xolox/vim-session'
   Plug 'xolox/vim-misc'
 " Physics-based visual scrolling when using ctrl-d and ctrl-u
 Plug 'yuttie/comfortable-motion.vim'
-" Testing a smooth scroller; doesn't work when scrolling visual mode
-" Plug 'terryma/vim-smooth-scroll'
-"   noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-"   noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-"   noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-"   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 " Improved autoread checking
 Plug 'djoshea/vim-autoread'
 
@@ -124,7 +124,7 @@ Plug 'djoshea/vim-autoread'
 """"""""""""""""""""""""""""""
 " YouCompleteMe (this slows down terminal vim a lot when enabled with syntax
 " highlighting)
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 " Valloric's highlighting for matching XML/HTML tags
 Plug 'valloric/matchtagalways'
   let g:mta_use_matchparen_group = 0
@@ -144,8 +144,12 @@ Plug 'mxw/vim-jsx'
 " Javascript libraries syntax provider
 Plug 'othree/javascript-libraries-syntax.vim'
     let g:used_javascript_libs = "jquery,react,handlebars"
-" " Emmet snippets
-" Plug 'mattn/emmet-vim'
+" Emmet snippets with <c-y>,
+Plug 'mattn/emmet-vim'
+let g:user_emmet_settings = {
+      \ 'xml' : { 'extends': 'html' },
+      \ 'javascript-jsx' : { 'extends': 'html' },
+      \}
 " Close HTML tags when the closing bracket is typed, configured to work with jsx
 Plug 'alvan/vim-closetag'
   let g:closetag_filenames = '*.html, *.xhtml, *.js, *.jsx, *.handlebars, *.hbs, *.ejs'
@@ -160,7 +164,5 @@ Plug 'alvan/vim-closetag'
 Plug 'vim-scripts/paredit.vim'
 " Automatic closing of quotes, parens, brackets, etc w syntax awareness
 Plug 'jiangmiao/auto-pairs'
-" Tab completion based on searching the current buffer
-" Plug 'ervandew/supertab'
 
 call plug#end()
