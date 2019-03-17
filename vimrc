@@ -5,6 +5,15 @@
 ""
 """"""""""""""""""""""""""""""""""""""""
 
+" Avoid errors if sourced files are not present
+" Use this function instead of 'source'-ing a script {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+"
 set nocompatible              " required
 filetype off                  " required
 """"""""""""""""""""""""""""""""""""""""
@@ -32,7 +41,7 @@ if !exists("g:syntax_on")
 endif
 
 " vim-plug plugin manager and plugin declarations script
-source ~/dotfiles/vim/config/plugdef.vim
+call SourceIfExists("~/dotfiles/vim/config/plugdef.vim")
 
 " Powerful backspacing
 set backspace=indent,eol,start
@@ -68,7 +77,7 @@ set smartindent
 set linebreak
 
 " Justify wrapped lines
-let &showbreak = '├── '
+let &showbreak = '├───'
 " Wrap lines at indent level
 set breakindent
 
@@ -117,8 +126,8 @@ nnoremap tl :tabnext<CR>
 " : will still be available as normal
 noremap <space> :
 
-" Enable mouse interactions in normal, visual, and insert modes
-set mouse=nvi
+" Enable mouse interactions in all modes
+set mouse=a
 
 " Customize gutter
 " Gutter width has space for linter symbols
@@ -135,6 +144,7 @@ endif
 set background=dark
 
 "" Colorscheme must be set after plugins are installed and set termguicolors
+" Selects the base16 color scheme currently enabled in the base16 shell script
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256 " Access colors present in 256 colorspace
   source ~/.vimrc_background
@@ -147,8 +157,9 @@ endif
 " MacVim or GVim-specific settings
 if has('gui_running')
     " Set font
-    set guifont=Perplexed:h11
+    set guifont=Iosevka Term Light:h13
     " Set transparancy on GUI window
-    set transparency:8
-    set blurradius:16
+    " set transparency:7
+    " set blurradius:16
 endif
+

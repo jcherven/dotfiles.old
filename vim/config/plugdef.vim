@@ -12,25 +12,11 @@ Plug 'chriskempson/base16-vim'
 
 " Lightline status bar
 Plug 'itchyny/lightline.vim'
-"   " Disable the default mode indicator
+  " Disable the default mode indicator
   set noshowmode
-  let g:lightline = {
-        \ 'colorscheme': 'PaperColor_dark',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'modified', 'readonly' ], [ 'absolutepath' ] ],
-        \   'right': [ ['percent'], ['lineinfo'], ['bufnum'],  ['filetype'] ]
-        \ },
-        \ 'inactive': {
-        \   'left': [ ['absolutepath'] ],
-        \   'right': [ ['percent'], ['lineinfo'], ['bufnum'], ['filetype'] ]
-        \},
-        \ 'component_function': {
-        \   'gitbranch': 'fugitive#head',
-        \ },
-        \ 'component': {
-        \   'bufnum': 'b%n'
-        \}
-        \}
+  " Set up the custom Lightline configuration
+  " SourceIfExists() is defined in the vimrc
+  call SourceIfExists("~/dotfiles/vim/config/jums-lightline.vim")
 
 " Customizable tab labels
 Plug 'mkitt/tabline.vim'
@@ -88,7 +74,7 @@ Plug 'sickill/vim-pasta'
 " Color definition visualization
 Plug 'chrisbra/Colorizer'
   let g:colorizer_auto_color = 0
-  let g:colorizer_auto_filetype = 'css,html,php,vim'
+  let g:colorizer_auto_filetype = 'vim'
   let g:colorizer_skip_comments = 1
   let g:colorizer_colornames = 0
   let g:colorizer_disable_bufleave = 1
@@ -101,7 +87,7 @@ map <C-n> :NERDTreeToggle<CR>
 " Surround text; replace with `cs`, remove with `ds`, surround with
 " `ysiw`, visually surround with `S`
 Plug 'tpope/vim-surround'
-" Comment selected lines; toggles on and off with gc (line) and gC (block)
+" Comment selected lines; toggles on and off with gc
  Plug 'tpope/vim-commentary'
 " Highlights trailing whitespace, provides :FixWhitespace to delete it
 Plug 'bronson/vim-trailing-whitespace'
@@ -115,7 +101,7 @@ Plug 'xolox/vim-session'
   " Required for vim-session
   Plug 'xolox/vim-misc'
 " Physics-based visual scrolling when using ctrl-d and ctrl-u
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 " Improved autoread checking
 Plug 'djoshea/vim-autoread'
 
@@ -164,5 +150,10 @@ Plug 'alvan/vim-closetag'
 Plug 'vim-scripts/paredit.vim'
 " Automatic closing of quotes, parens, brackets, etc w syntax awareness
 Plug 'jiangmiao/auto-pairs'
+" CSS3 syntax support for vim's builtin syntax/css.vim
+Plug 'hail2u/vim-css3-syntax'
+" A very fast, multi-syntax color-sensitive color name highlighter
+Plug 'ap/vim-css-color'
 
 call plug#end()
+

@@ -18,7 +18,7 @@
     "terminal.external.windowsExec": "cmd.exe",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Nier: Automata Light",
+    "workbench.colorTheme": "Spacemacs - dark",
     "vim.mouseSelectionGoesIntoVisualMode": true,
     "vim.showcmd": true,
     "vim.showmodename": true,
@@ -27,11 +27,7 @@
     "terminal.external.osxExec": "/Users/jums/Applications/iTerm.app",
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
+    "workbench.colorCustomizations": {},
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorBlinking": true,
     "editor.tabSize": 2,

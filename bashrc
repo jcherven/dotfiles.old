@@ -30,27 +30,12 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
   source ~/git-prompt.sh
   export GIT_PS1_SHOWDIRTYSTATE=1
   # Git prompt color definitions
-  # Define ANSI colors like this:
-  # \[\033[0;<ansivalue>m]
-  # Define 256 colors like this:
-  # \[\033[38;5;<rgbvalue>m\]
-  # Custom 256 color definitions based on jummiterm
-  # jummigreen="\[\033[38;5;35m\]"
-  # jummiblue="\[\033[38;5;75m\]"
-  # jummipurple="\[\033[38;5;133m\]"
   # Grab terminal colors
   green="\[\033[0;32m\]"
   blue="\[\033[0;34m\]"
   purple="\[\033[0;35m\]"
   # reset for normal colored command input
   reset="\[\033[0m\]"
-  # '\u'              current username
-  # '\$(__git_ps1)'   current branch and change status
-  # '\W'              current base directory
-  # Uncolored prompt with username, git branch+status, and base dir
-  # export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-  # Jummiterm-based prompt
-  # export PS1="$jummipurple\u$jummigreen\$(__git_ps1)$jummiblue \W $ $reset"
   export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 # Highlighted man page output.
 man() {
@@ -73,3 +58,4 @@ set -o vi
 # Case insensitive bash completion
 set completion-ignore-case on
 set show-all-if-ambiguous on
+
