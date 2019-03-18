@@ -115,7 +115,8 @@ Plug 'valloric/matchtagalways'
 
 " Ale for async linting
 Plug 'w0rp/ale'
-
+  " Fix files when saving
+  let g:ale_fix_on_save=1
 " Prettier code format checking and fixing
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
