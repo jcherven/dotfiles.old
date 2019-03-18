@@ -115,6 +115,7 @@ Plug 'valloric/matchtagalways'
 
 " Ale for async linting
 Plug 'w0rp/ale'
+
 " Prettier code format checking and fixing
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
