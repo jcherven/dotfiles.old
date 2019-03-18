@@ -51,15 +51,6 @@ Plug 'scrooloose/nerdtree'
   " highlighted node with 'b'
   Plug 'mortonfox/nerdtree-clip'
 
-" Send contents of one buffer to another tmux pane
-" Plug 'jgdavey/tslime.vim'
-"   let g:tslime_always_current_session = 1
-"   let g:tslime_always_current_window = 1
-"   " keybindings for tslime
-"   vmap <Leader>s <Plug>SendSelectionToTmux
-"   nmap <Leader>s <Plug>NormalModeSendToTmux
-"   nmap <C-c>r <Plug>SetTmuxVars
-"
 " Automatic toggling of rel/abs line numbering in normal/insert modes
 Plug 'jeffKreeftmeijer/vim-numbertoggle'
 " Indentation Guides
@@ -121,6 +112,62 @@ Plug 'valloric/matchtagalways'
   \  'javascript.jsx': 1,
   \  'handlebars': 1
   \}
+
+" Ale for async linting
+Plug 'w0rp/ale'
+" Prettier code format checking and fixing
+Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'branch': 'release/1.x',
+      \ 'for': [
+      \   'javascript',
+      \   'css',
+      \   'scss',
+      \   'json',
+      \   'markdown',
+      \   'html'
+      \ ]}
+  " Disables quick-fix buffer auto-open when errors are found
+  let g:prettier#quickfix_enabled=0
+  " Default to async operation
+  let g:prettier#exec_cmd_async=1
+  " vim-prettier formatting settings
+    " max line length that prettier will wrap on
+    " Prettier default: 80
+    let g:prettier#config#print_width = 80
+    " number of spaces per indentation level
+    " Prettier default: 2
+    let g:prettier#config#tab_width = 2
+    " use tabs over spaces
+    " Prettier default: false
+    let g:prettier#config#use_tabs = 'false'
+    " print semicolons
+    " Prettier default: true
+    let g:prettier#config#semi = 'true'
+    " single quotes over double quotes
+    " Prettier default: false
+    let g:prettier#config#single_quote = 'true'
+    " print spaces between brackets
+    " Prettier default: true
+    let g:prettier#config#bracket_spacing = 'false'
+    " put > on the last line instead of new line
+    " Prettier default: false
+    let g:prettier#config#jsx_bracket_same_line = 'false'
+    " avoid|always
+    " Prettier default: avoid
+    let g:prettier#config#arrow_parens = 'always'
+    " none|es5|all
+    " Prettier default: none
+    let g:prettier#config#trailing_comma = 'all'
+    " flow|babylon|typescript|css|less|scss|json|graphql|markdown
+    " Prettier default: babylon
+    let g:prettier#config#parser = 'flow'
+    " cli-override|file-override|prefer-file
+    let g:prettier#config#config_precedence = 'prefer-file'
+    " always|never|preserve
+    let g:prettier#config#prose_wrap = 'preserve'
+    " css|strict|ignore
+    let g:prettier#config#html_whitespace_sensitivity = 'css'
 " Handlebars filetype recognition
 Plug 'mustache/vim-mustache-handlebars'
 " Javascript syntax highlighting provider
