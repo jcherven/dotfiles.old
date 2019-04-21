@@ -41,7 +41,7 @@ if !exists("g:syntax_on")
 endif
 
 " vim-plug plugin manager and plugin declarations script
-call SourceIfExists("~/dotfiles/vim/config/plugdef.vim")
+call SourceIfExists("./vim/config/plugdef.vim")
 
 " Powerful backspacing
 set backspace=indent,eol,start
