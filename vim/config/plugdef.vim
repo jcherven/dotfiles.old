@@ -115,8 +115,13 @@ Plug 'valloric/matchtagalways'
 
 " Ale for async linting
 Plug 'w0rp/ale'
+  " Explicitly define linters
+  let g:ale_linters_explicit=1
   " Fix files when saving
   let g:ale_fix_on_save=1
+  " Disable linting on text change
+  let g:ale_lint_on_text_changed = 'never'
+
 " Prettier code format checking and fixing
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
