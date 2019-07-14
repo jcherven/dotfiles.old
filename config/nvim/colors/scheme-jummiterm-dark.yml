@@ -1,0 +1,19 @@
+scheme: "JummiTerm-Dark"
+author: "James Cherven (https://github.com/jcherven)"
+
+color00: "#292b2e" # dark main BG
+color01: "#322544" # vim cursorline bg
+color02: "#404374" # vim selection
+color03: "#68727c" # comments
+color04: "#806aa8" # bold; folders in ranger;
+color05: "#b2b2b2" # dark main FG
+color06: "#ff9bf1" # idk??
+color07: "#444444" # inactive tabline and statusline bg
+color08: "#19a878" # syntax
+color09: "#20d699" # syntax
+color0A: "#21bbc7" # syntax
+color0B: "#098f99" # syntax
+color0C: "#806aa8" # syntax
+color0D: "#bc6ec5" # synatx
+color0E: "#d3a2d8" # syntax
+color0F: "#ce537a" # syntax, showmode bg
