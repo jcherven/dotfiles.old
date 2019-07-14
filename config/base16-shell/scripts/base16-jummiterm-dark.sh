@@ -25,7 +25,7 @@ color18="29/2b/2e" # Base 01
 color19="5d/4d/7a" # Base 02
 color20="b1/95/1d" # Base 04
 color21="e8/e8/e8" # Base 06
-color_foreground="2b/2b/2b" # Base 05
+color_foreground="b2/b2/b2" # Base 05
 color_background=$color00 # Base 00
 
 # Undefined values present in iTerm's JummiTerm-Dark:
