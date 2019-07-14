@@ -3,7 +3,7 @@
 # Base16 Shell template by Chris Kempson (http://chriskempson.com)
 # Jummiterm scheme by James Cherven (https://github.com/jcherven)
 
-color00="b2/b2/b2" # Base 00 - Black
+color00="29/2b/2e" # Base 00 - Black
 color01="ce/53/7a" # Base 08 - Red
 color02="19/a8/78" # Base 0B - Green
 color03="20/d6/99" # Base 0A - Yellow
@@ -25,8 +25,8 @@ color18="29/2b/2e" # Base 01
 color19="5d/4d/7a" # Base 02
 color20="b1/95/1d" # Base 04
 color21="e8/e8/e8" # Base 06
-color_foreground=$color00 # Base 05
-color_background="29/2b/2e" # Base 00
+color_foreground="2b/2b/2b" # Base 05
+color_background=$color00 # Base 00
 
 # Undefined values present in iTerm's JummiTerm-Dark:
 # Bold: "ef/ff/ff"
