@@ -1,6 +1,6 @@
 " =============================================================================
-" Filename: autoload/lightline/colorscheme/base16-jummiterm-dark-lightline.vim
-" Lightline Name: "base16_JummiTerm_Dark"
+" Filename: autoload/lightline/colorscheme/lightline-jummiterm-dark.vim
+" Lightline Name: "lightline-jummiterm-dark"
 " Author: James Cherven
 " License: MIT License
 " Last Change: 2019-02-26
@@ -58,4 +58,4 @@ let s:p.tabline.middle = [ [s:tabline_bg, s:tabline_bg]]
 let s:p.tabline.right = copy(s:p.normal.right)
 let s:p.normal.error = [ [ s:background, s:error ] ]
 
-let g:lightline#colorscheme#base16_JummiTerm_Dark#palette = lightline#colorscheme#fill(s:p)
+let g:lightline#colorscheme#lightline-jummiterm-dark#palette = lightline#colorscheme#fill(s:p)

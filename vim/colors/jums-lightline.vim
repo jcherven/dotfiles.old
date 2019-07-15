@@ -1,6 +1,6 @@
 " Custom configuration for statusline (lightline.vim)
 let g:lightline = {
-      \ 'colorscheme': 'base16_JummiTerm_Dark',
+      \ 'colorscheme': 'lightline-jummiterm-dark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'modified', 'readonly' ], [ 'absolutepath' ] ],
       \   'right': [ ['percent'], ['lineinfo'], ['bufnum'],  ['filetype'] ]
