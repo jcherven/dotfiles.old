@@ -10,7 +10,7 @@ color03="20/d6/99" # Base 0A - Yellow
 color04="80/6a/a8" # Base 0D - Blue
 color05="bc/6e/c5" # Base 0E - Magenta
 color06="d3/a2/d8" # Base 0C - Cyan
-color07="68/72/a3" # Base 05 - White
+color07="b2/b2/b2" # Base 05 - White
 color08=$color07 # Base 03 - Bright Black
 color09=$color03 # Base 08 - Bright Red
 color10=$color02 # Base 0B - Bright Green
@@ -25,7 +25,7 @@ color18="29/2b/2e" # Base 01
 color19="5d/4d/7a" # Base 02
 color20="b1/95/1d" # Base 04
 color21="e8/e8/e8" # Base 06
-color_foreground="b2/b2/b2" # Base 05
+color_foreground=$color07 # Base 05
 color_background=$color00 # Base 00
 
 # Undefined values present in iTerm's JummiTerm-Dark:
