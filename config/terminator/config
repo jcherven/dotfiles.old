@@ -23,7 +23,9 @@
 [profiles]
   [[default]]
     background_darkness = 0.49
+    cursor_blink = False
     cursor_color = "#b1951d"
+    cursor_color_fg = False
     font = Iosevka 11
     scrollback_infinite = True
     use_system_font = False
