@@ -3,3 +3,4 @@
 	email = jcherven@mail.usf.edu
 [core]
 	excludesfile = /Users/jums/.gitignore_global
+	editor = vim

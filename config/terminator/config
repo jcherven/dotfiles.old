@@ -4,11 +4,6 @@
   title_transmit_bg_color = "#75507b"
   title_use_system_font = False
 [keybindings]
-  go_next = <Primary><Shift>n
-  go_prev = <Primary><Shift>p
-  go_up = <Alt>Left
-  split_horiz = <Primary><Shift>j
-  split_vert = <Primary><Shift>l
   layout_launcher = none
 [layouts]
   [[default]]

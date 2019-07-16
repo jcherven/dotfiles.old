@@ -24,6 +24,11 @@
   alias ls='ls -GFh'
   # neovim is vim for my purposes
   alias vim='nvim'
+  # Alias terminator if on WSL
+  set -e
+  if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    alias terminator='nohup terminator &'
+  fi
 
 # Define colors via script instead of term theme with Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
