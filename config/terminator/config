@@ -1,16 +1,15 @@
 [global_config]
+  always_split_with_profile = True
   title_font = Iosevka 9
   title_transmit_bg_color = "#75507b"
   title_use_system_font = False
 [keybindings]
-  go_down = <Primary>j
-  go_left = <Primary>h
-  go_next = <Primary>l
-  go_prev = <Primary>h
-  go_right = <Primary>l
-  go_up = <Primary>k
+  go_next = <Primary><Shift>n
+  go_prev = <Primary><Shift>p
+  go_up = <Alt>Left
   split_horiz = <Primary><Shift>j
   split_vert = <Primary><Shift>l
+  layout_launcher = none
 [layouts]
   [[default]]
     [[[child1]]]

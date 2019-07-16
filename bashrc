@@ -1,5 +1,10 @@
 # Environment variable exports
   # Path exports
+    # Export a X display variable if on WSL
+    set -e
+    if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+      export DISPLAY=:0
+    fi
     # homebrew things
     export PATH=/usr/local/bin:$PATH
 
