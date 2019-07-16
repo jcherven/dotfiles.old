@@ -1,7 +1,6 @@
 # Environment variable exports
   # Path exports
     # Export a X display variable if on WSL
-    set -e
     if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
       export DISPLAY=:0
     fi
@@ -25,7 +24,6 @@
   # neovim is vim for my purposes
   alias vim='nvim'
   # Alias terminator if on WSL
-  set -e
   if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     alias terminator='nohup terminator &'
   fi
