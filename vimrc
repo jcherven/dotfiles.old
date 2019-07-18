@@ -19,7 +19,7 @@ set nocompatible              " required
 filetype off                  " required
 """"""""""""""""""""""""""""""""""""""""
 
-" Keep swap files in ~/.vim/tmp, see if it helps performance on WSL
+" Keep swap files in ~/.vim/tmp; improves performance on WSL
 set directory^=$HOME/.vim/tmp//
 
 "Map <leader> to spacebar
@@ -156,6 +156,7 @@ endif
 
 " Disable concealing of quotation marks in .json files
 " Note: this gets overrided by the indentation marker plugin
+" Setting to 0 also hides indentation markers :(
 " set conceallevel=0
 
 " MacVim or GVim-specific settings
