@@ -1,5 +1,8 @@
 " vi:syntax=vim
 
+" THIS IS THE FILE BASE16-VIM USES
+" ~/dotfiles/config/nvim/colors/base16-jummiterm-dark.vim
+"
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
 " Jummiterm-Dark scheme by James Cherven (https://github.com/jcherven)
@@ -19,7 +22,7 @@ let s:gui00        = "292b2e"
 let s:gui01        = "322544"
 let s:gui02        = "404374"
 let s:gui03        = "68727c"
-let s:gui04        = "806aa8"
+let s:gui04        = "f7efff"
 let s:gui05        = "b2b2b2"
 let s:gui06        = "ff9bf1"
 let s:gui07        = "444444"
