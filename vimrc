@@ -18,7 +18,10 @@ set nocompatible              " required
 filetype off                  " required
 """"""""""""""""""""""""""""""""""""""""
 
-" Map <leader> to spacebar
+" Keep swap files in ~/.vim/tmp, see if it helps performance on WSL
+set directory^-$HOME/.vim/tmp//
+
+"Map <leader> to spacebar
 map <SPACE> <leader>
 
 " Set default encoding
