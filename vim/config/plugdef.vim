@@ -192,6 +192,9 @@ Plug 'mxw/vim-jsx'
 " Javascript libraries syntax provider
 Plug 'othree/javascript-libraries-syntax.vim'
     let g:used_javascript_libs = "jquery,react,handlebars"
+" JSON highlighting and such
+Plug 'elzr/vim-json'
+  let g:vim_json_syntax_conceal = 0
 " Emmet snippets with <c-y>,
 Plug 'mattn/emmet-vim'
 let g:user_emmet_settings = {
