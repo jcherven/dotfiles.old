@@ -4,7 +4,6 @@
 "" dependencies: ./vim/config/plugdef.vim
 ""
 """"""""""""""""""""""""""""""""""""""""
-"dsahuiorbqvo
 
 " Avoid errors if sourced files are not present
 " Use this function instead of 'source'-ing a script {
