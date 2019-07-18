@@ -36,8 +36,6 @@ set t_Co=256
 " don't redraw while executing macros
 set lazyredraw
 
-" fdak;lfhdkal;fjdk
-
 " syntax highlighting
 " syntax on
 filetype plugin on
