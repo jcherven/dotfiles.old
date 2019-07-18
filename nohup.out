@@ -1,0 +1,3 @@
+Unable to init server: Could not connect: Connection refused
+Unable to init server: Could not connect: Connection refused
+You need to run terminator in an X environment. Make sure $DISPLAY is properly set

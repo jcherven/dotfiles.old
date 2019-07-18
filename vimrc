@@ -19,7 +19,7 @@ filetype off                  " required
 """"""""""""""""""""""""""""""""""""""""
 
 " Keep swap files in ~/.vim/tmp, see if it helps performance on WSL
-set directory^-$HOME/.vim/tmp//
+set directory^=$HOME/.vim/tmp//
 
 "Map <leader> to spacebar
 map <SPACE> <leader>
