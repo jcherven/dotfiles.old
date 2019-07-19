@@ -19,12 +19,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 
 " Lightline status bar
-Plug 'itchyny/lightline.vim'
-  " Disable the default mode indicator
-  set noshowmode
-  " Set up the custom Lightline configuration
-  " SourceIfExists() is defined in the vimrc
-  call SourceIfExists("~/dotfiles/vim/config/jums-lightline.vim")
+"Plug 'itchyny/lightline.vim'
+"  " Disable the default mode indicator
+"  set noshowmode
+"  " Set up the custom Lightline configuration
+"  " SourceIfExists() is defined in the vimrc
+"  call SourceIfExists("~/dotfiles/vim/config/jums-lightline.vim")
 
 " Customizable tab labels
 Plug 'mkitt/tabline.vim'
