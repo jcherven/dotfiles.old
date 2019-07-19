@@ -1,5 +1,6 @@
 " vi:syntax=vim
 
+" THIS FILE IS UNUSED
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
 " Jummiterm-Dark scheme by James Cherven (https://github.com/jcherven)

@@ -20,10 +20,18 @@
 
 #Aliases
   # Always use colored ls output
-  alias ls='ls -GFh'
-  # neovim is vim for my purposes
-  alias vim='nvim'
-  # Alias terminator if on WSL
+  if [[ "$OSTYPE" == "linux-gnu"  ]]; then
+    alias ls='ls --color'
+  elif [[ "$OSTYPE" == "darwin"*  ]]; then
+    alias ls='ls -GFh'
+  fi
+
+  # Use Neovim if it's installed
+  if ! [ -x "$command -v nvim)" ]; then
+    alias vim='nvim'
+  fi
+
+  # Alias terminator if on WSL, not just Linux
   if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     alias terminator='nohup terminator &'
   fi
