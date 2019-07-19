@@ -18,7 +18,7 @@ set nocompatible              " required
 filetype off                  " required
 """"""""""""""""""""""""""""""""""""""""
 
-" Keep swap files in ~/.vim/tmp; improves performance on WSL
+" Keep swap files in one place; maybe but probs not improves performance on WSL
 set directory^=$HOME/.vim/tmp//
 
 "Map <leader> to spacebar
@@ -95,7 +95,7 @@ set number
 set autochdir
 " autocmd Bufenter * silent! lcd %:p:h
 
-" Use clipboard
+" Use system clipboard
 set clipboard=unnamed
 
 " Cursor settings
@@ -147,21 +147,17 @@ endif
 set background=dark
 
 "" Colorscheme must be set after plugins are installed and set termguicolors
+
 " Selects the base16 color scheme currently enabled in the base16 shell script
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256 " Access colors present in 256 colorspace
   source ~/.vimrc_background
 endif
 
-" Disable concealing of quotation marks in .json files
-" Note: this gets overrided by the indentation marker plugin
-" Setting to 0 also hides indentation markers :(
-" set conceallevel=0
-
 " MacVim or GVim-specific settings
 if has('gui_running')
     " Set font
-    set guifont=Iosevka Term Light:h13
+    set guifont=Iosevka Term:h13
     " Set transparancy on GUI window
     " set transparency:7
     " set blurradius:16
