@@ -26,7 +26,6 @@ DIRSLINKED=(
 # file symlinks
 for i in "${FILESLOCAL[@]}"; do
   if [ -f "${FILESLOCAL[$i]}" ];
-  then
     mv "${FILESLOCAL[$i]}" "${FILESLOCAL[$i]}.default"
   fi
   ln -s "${FILESLINKED[$i]}" "${FILESLOCAL[$i]}"
@@ -35,7 +34,6 @@ done
 # directory symlinks
 for j in "${DIRSLOCAL[@]}"; do
   if [ -d "${DIRSLOCAL[$j]}" ];
-  then
     mv "${DIRSLOCAL[$j]}" "${DIRSLOCAL[$j]}.default"
   fi
   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
