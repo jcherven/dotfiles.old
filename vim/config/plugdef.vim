@@ -53,6 +53,9 @@ Plug 'scrooloose/nerdtree'
   let g:NERDTreeAutoDeleteBuffer = 1
   " Show dotfiles and hidden files
   let g:NERDTreeShowHidden = 1
+  " Use h and l keys for expanding or backing out of directories
+  let g:NERDTreeMapJumpParent = "h"
+  let g:NERDTreeMapActivateNode = "l"
   " Git flags for NERDtree
   Plug 'Xuyuanp/nerdtree-git-plugin'
   " Adds a command to the 'm' menu for copying the absolute path of the
