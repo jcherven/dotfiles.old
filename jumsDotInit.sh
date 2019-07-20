@@ -41,23 +41,33 @@ DIRSLINKED=(
   "$HOME/dotfiles/config/terminator"
 )
 
-# file symlinks
-for i in "${FILESLOCAL[@]}"; do
-  if [ -f "${FILESLOCAL[$i]}" ]
+# file symlinks with a c-style loop to access array index numbers
+for ((i=0; i<${#FILESLOCAL[@]}; ++i)); do
+  if [ -f "${FILESLOCAL[$i]}" ];
   then
     mv "${FILESLOCAL[$i]}" "${FILESLOCAL[$i]}.default"
   fi
   ln -s "${FILESLINKED[$i]}" ".${FILESLOCAL[$i]}"
 done
 
-# directory symlinks
-for j in "${DIRSLOCAL[@]}"; do
-  if [ -d "${DIRSLOCAL[$j]}" ]
-  then
-    mv -r "${DIRSLOCAL[$j]}" "${DIRSLOCAL[$j]}.default"
-  fi
-  ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
-done
+
+# # file symlinks
+# for i in "${FILESLOCAL[@]}"; do
+#   if [ -f "${FILESLOCAL[$i]}" ]
+#   then
+#     mv "${FILESLOCAL[$i]}" "${FILESLOCAL[$i]}.default"
+#   fi
+#   ln -s "${FILESLINKED[$i]}" ".${FILESLOCAL[$i]}"
+# done
+
+# # directory symlinks
+# for j in "${DIRSLOCAL[@]}"; do
+#   if [ -d "${DIRSLOCAL[$j]}" ]
+#   then
+#     mv -r "${DIRSLOCAL[$j]}" "${DIRSLOCAL[$j]}.default"
+#   fi
+#   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
+# done
 
 # Install fonts-iosevka (requires adding its ppa)
 # Install base-16shell and run the jummiterm theme
