@@ -64,7 +64,7 @@ source "$HOME/.bashrc"
 
 popd
 
-sudo apt update
+sudo apt update --fix-missing
 
 # Install fonts-iosevka (requires adding its ppa)
 sudo add-apt-repository ppa:laurent-boulard/fonts
@@ -76,14 +76,19 @@ sudo apt install -y fonts-iosevka
 # Install vim's ycm deps: cmake, python-dev, build-essential
 sudo apt install -y build-essential python-dev cmake
 
-# Install neovim
+# Install neovim (ubuntu)
 sudo apt install -y neovim
 # Install vim-plug
-# run vim and :PlugInstall
+# Install curl
+sudo apt install -y curl
+curl -fLo "~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+# run nvim and :PlugInstall
+nvim --headless +PlugInstall +qa
 
 # Install shellcheck
 sudo apt install -y shellcheck
 # Install nodejs
+
 # Install yarn
 # Install heroku
 
@@ -92,6 +97,5 @@ sudo apt install -y lynx
 # Install Ranger
 sudo apt install -y ranger
 # Install Terminator (requires dbus-x11)
-sudo apt install -y dbus-x11
-sudo apt install -y terminator
+sudo apt install -y dbus-x11 terminator
 
