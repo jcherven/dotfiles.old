@@ -60,20 +60,38 @@ for ((j=0; j<${#DIRSLOCAL[@]}; ++j)); do
   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
 done
 
+source "$HOME/.bashrc"
+
+popd
+
+sudo apt update
+
 # Install fonts-iosevka (requires adding its ppa)
+sudo add-apt-repository ppa:laurent-boulard/fonts
+sudo apt update
+sudo apt install -y fonts-iosevka
+
 # Install base-16shell and run the jummiterm theme
 
 # Install vim's ycm deps: cmake, python-dev, build-essential
+sudo apt install -y build-essential python-dev cmake
+
 # Install neovim
+sudo apt install -y neovim
 # Install vim-plug
 # run vim and :PlugInstall
 
 # Install shellcheck
+sudo apt install -y shellcheck
 # Install nodejs
 # Install yarn
 # Install heroku
 
 # Install lynx
+sudo apt install -y lynx
 # Install Ranger
+sudo apt install -y ranger
 # Install Terminator (requires dbus-x11)
+sudo apt install -y dbus-x11
+sudo apt install -y terminator
 
