@@ -103,7 +103,7 @@ Plug 'xolox/vim-session'
   " Required for vim-session
   Plug 'xolox/vim-misc'
 " Physics-based visual scrolling when using ctrl-d and ctrl-u
-" Plug 'yuttie/comfortable-motion.vim'
+Plug 'yuttie/comfortable-motion.vim'
 " Improved autoread checking
 Plug 'djoshea/vim-autoread'
 
@@ -115,7 +115,10 @@ Plug 'djoshea/vim-autoread'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 " Valloric's highlighting for matching XML/HTML tags
 Plug 'valloric/matchtagalways'
-  let g:mta_use_matchparen_group = 0
+  " Sets the matchtag highlight color to vim's paren hilite group
+  let g:mta_set_default_matchtag_color = 0
+  let g:mta_use_matchparen_group = 1
+
   let g:mta_filetypes = {
   \  'html': 1,
   \  'xhtml': 1,
