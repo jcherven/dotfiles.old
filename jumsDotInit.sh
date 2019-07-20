@@ -55,7 +55,7 @@ done
 for ((j=0; j<${#DIRSLOCAL[@]}; ++j)); do
   if [ -d "${DIRSLOCAL[$j]}" ]
   then
-    mv -r "${DIRSLOCAL[$j]}" "${DIRSLOCAL[$j]}.default"
+    mv "${DIRSLOCAL[$j]}" "${DIRSLOCAL[$j]}.default"
   fi
   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
 done
