@@ -43,7 +43,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Git-friendly command prompt
-  source ~/git-prompt.sh
+  source ~/.git-prompt.sh
   export GIT_PS1_SHOWDIRTYSTATE=1
   # Git prompt color definitions
   # Grab terminal colors
