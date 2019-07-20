@@ -4,9 +4,27 @@ set -e
 pushd "$HOME"
 
 # the arrays FILESLOCAL and FILESLINKED correspond by index order
-FILESLOCAL=("$HOME/.Xresources" "$HOME/git-prompt.sh" "$HOME/.bashrc" "$HOME/.vimrc" "$HOME/.gitconfig" "$HOME/.lynxrc" "$HOME/lynx_bookmarks.html" "$HOME/.tmux.conf")
+FILESLOCAL=(
+  "$HOME/.Xresources"
+  "$HOME/git-prompt.sh"
+  "$HOME/.bashrc"
+  "$HOME/.vimrc"
+  "$HOME/.gitconfig"
+  "$HOME/.lynxrc"
+  "$HOME/lynx_bookmarks.html"
+  "$HOME/.tmux.conf"
+)
 
-FILESLINKED=("$HOME/dotfiles/Xresources" "$HOME/dotfiles/git-prompt.sh" "$HOME/dotfiles/bashrc" "$HOME/dotfiles/vimrc" "$HOME/dotfiles/gitconfig" "$HOME/dotfiles/lynxrc" "$HOME/dotfiles/lynx_bookmarks.html" "$HOME/dotfiles/tmux.conf")
+FILESLINKED=(
+  "$HOME/dotfiles/Xresources"
+  "$HOME/dotfiles/git-prompt.sh"
+  "$HOME/dotfiles/bashrc"
+  "$HOME/dotfiles/vimrc"
+  "$HOME/dotfiles/gitconfig"
+  "$HOME/dotfiles/lynxrc"
+  "$HOME/dotfiles/lynx_bookmarks.html"
+  "$HOME/dotfiles/tmux.conf"
+)
 
 # the arrays DIRSLOCAL and DIRSLINKED correspond by index order
 DIRSLOCAL=(
@@ -29,14 +47,14 @@ for i in "${FILESLOCAL[@]}"; do
   then
     mv "${FILESLOCAL[$i]}" "${FILESLOCAL[$i]}.default"
   fi
-  ln -s "${FILESLINKED[$i]}" "${FILESLOCAL[$i]}"
+  ln -s "${FILESLINKED[$i]}" ".${FILESLOCAL[$i]}"
 done
 
 # directory symlinks
 for j in "${DIRSLOCAL[@]}"; do
   if [ -d "${DIRSLOCAL[$j]}" ]
   then
-    mv "${DIRSLOCAL[$j]}" "${DIRSLOCAL[$j]}.default"
+    mv -r "${DIRSLOCAL[$j]}" "${DIRSLOCAL[$j]}.default"
   fi
   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
 done
