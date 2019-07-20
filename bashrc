@@ -31,7 +31,7 @@
     alias vim='nvim'
   fi
 
-  # Alias terminator if on WSL, not just Linux
+  # Alias terminator for launching as an X window if on WSL, not just Linux
   if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     alias terminator='nohup terminator &'
   fi
@@ -53,7 +53,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
   # reset for normal colored command input
   reset="\[\033[0m\]"
   export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
-# Highlighted man page output.
+# Highlighted man page output in linux and macos.
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -68,7 +68,7 @@ man() {
 # bash-completion brew package
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# vi mode at the prompt
+# enable vi mode at the prompt
 set -o vi
 
 # Case insensitive bash completion

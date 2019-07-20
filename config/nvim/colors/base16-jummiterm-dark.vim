@@ -183,7 +183,7 @@ call <sid>hi("VertSplit",     s:guiGray05, s:guiGray05, s:cterm07, s:cterm07, "n
 call <sid>hi("ColorColumn",   "", s:guiPurple05, "", s:cterm01, "none", "")
 call <sid>hi("CursorColumn",  "", s:guiPurple05, "", s:cterm01, "none", "")
 call <sid>hi("CursorLine",    "", s:guiPurple05, "", s:cterm01, "none", "")
-call <sid>hi("CursorLineNr",  s:guiPink04, s:guiPurple05, s:cterm04, s:cterm01, "", "")
+call <sid>hi("CursorLineNr",  s:guiPurple01, s:guiPurple05, s:cterm04, s:cterm01, "", "")
 call <sid>hi("QuickFixLine",  "", s:guiPurple05, "", s:cterm01, "none", "")
 call <sid>hi("PMenu",         s:guiFG, s:guiPurple05, s:cterm05, s:cterm01, "none", "")
 call <sid>hi("PMenuSel",      s:guiPurple05, s:guiFG, s:cterm01, s:cterm05, "", "")
