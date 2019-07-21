@@ -60,8 +60,6 @@ for ((j=0; j<${#DIRSLOCAL[@]}; ++j)); do
   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
 done
 
-source "$HOME/.bashrc"
-
 popd
 
 sudo apt update --fix-missing
@@ -78,8 +76,7 @@ sudo apt install -y curl
 git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
 # symlink the base16 jummiterm theme in .config/base16-shell/scripts
 ln -s "$HOME/dotfiles/config/base16-shell/scripts/base16-jummiterm-dark.sh" "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
-source "$HOME/.bashrc"
-base16_jummiterm-dark
+source "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
 
 # Install shellcheck
 sudo apt install -y shellcheck
@@ -89,8 +86,6 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update
 sudo apt install -y yarn
-
-source "$HOME/.bashrc"
 
 # Install heroku
 
