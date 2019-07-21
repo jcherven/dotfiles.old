@@ -109,3 +109,6 @@ sudo apt install -y neovim
 # Install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Run vim headless and install plugins
+nvim --headless +PlugInstall +qa
+
