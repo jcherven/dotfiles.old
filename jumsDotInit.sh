@@ -99,7 +99,7 @@ sudo apt install -y ranger
 sudo apt install -y dbus-x11 terminator
 
 # Install vim's ycm deps: cmake, python-dev, build-essential
-sudo apt install -y build-essential cmake python3-dev
+sudo apt install -y build-essential cmake python-dev
 
 # Install neovim (ubuntu)
 sudo apt install -y neovim
