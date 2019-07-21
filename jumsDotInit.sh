@@ -71,33 +71,38 @@ sudo add-apt-repository -y ppa:laurent-boulard/fonts
 sudo apt update
 sudo apt install -y fonts-iosevka
 
+# Install curl
+sudo apt install -y curl
+
 # Install base-16shell and run the jummiterm theme
+git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
+
+# Install shellcheck
+sudo apt install -y shellcheck
+
+# Install yarn + node (required for vim-prettier; must install before)
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install -y yarn
+
+# Install heroku
+
+# Install lynx
+sudo apt install -y lynx
+
+# Install Ranger
+sudo apt install -y ranger
+
+# Install Terminator (requires dbus-x11)
+sudo apt install -y dbus-x11 terminator
 
 # Install vim's ycm deps: cmake, python-dev, build-essential
 sudo apt install -y build-essential cmake python3-dev
 
 # Install neovim (ubuntu)
 sudo apt install -y neovim
-# Install curl
-sudo apt install -y curl
+
 # Install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# run nvim and :PlugInstall
-nvim --headless +PlugInstall +qa
-# Install YCM for vim
-source "$HOME/.vim/plugged/YouCompleteMe/install.py"
-
-# Install shellcheck
-sudo apt install -y shellcheck
-# Install nodejs
-
-# Install yarn
-# Install heroku
-
-# Install lynx
-sudo apt install -y lynx
-# Install Ranger
-sudo apt install -y ranger
-# Install Terminator (requires dbus-x11)
-sudo apt install -y dbus-x11 terminator
 
