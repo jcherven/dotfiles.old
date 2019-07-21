@@ -76,6 +76,7 @@ sudo apt install -y curl
 
 # Install base-16shell and run the jummiterm theme
 git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
+base16_jummiterm-dark
 
 # Install shellcheck
 sudo apt install -y shellcheck
