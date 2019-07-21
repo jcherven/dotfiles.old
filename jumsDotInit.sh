@@ -67,23 +67,25 @@ popd
 sudo apt update --fix-missing
 
 # Install fonts-iosevka (requires adding its ppa)
-sudo add-apt-repository ppa:laurent-boulard/fonts
+sudo add-apt-repository -y ppa:laurent-boulard/fonts
 sudo apt update
 sudo apt install -y fonts-iosevka
 
 # Install base-16shell and run the jummiterm theme
 
 # Install vim's ycm deps: cmake, python-dev, build-essential
-sudo apt install -y build-essential python-dev cmake
+sudo apt install -y build-essential cmake python3-dev
 
 # Install neovim (ubuntu)
 sudo apt install -y neovim
-# Install vim-plug
 # Install curl
 sudo apt install -y curl
-curl -fLo "~/.local/share/nvim/site/autoload/plug.vim" --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+# Install vim-plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # run nvim and :PlugInstall
 nvim --headless +PlugInstall +qa
+# Install YCM for vim
+source "$HOME/.vim/plugged/YouCompleteMe/install.py"
 
 # Install shellcheck
 sudo apt install -y shellcheck
