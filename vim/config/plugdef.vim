@@ -99,6 +99,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'wesq3/vim-windowswap'
 " Session and workspace manager; provides :SaveSession and :OpenSession
 Plug 'xolox/vim-session'
+  let g:session_autosave = 'no'
   let g:session_default_name = "session"
   " Required for vim-session
   Plug 'xolox/vim-misc'
