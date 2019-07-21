@@ -64,6 +64,8 @@ for ((j=0; j<${#DIRSLOCAL[@]}; ++j)); do
   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
 done
 
+sudo apt update --fix-missing
+
 # Install curl
 sudo apt install -y curl
 
@@ -73,7 +75,7 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 # fonts-iosevka
 sudo add-apt-repository -y ppa:laurent-boulard/fonts
-sudo apt update --fix-missing
+sudo apt update
 
 # Install fonts-iosevka (requires adding its ppa)
 sudo apt install -y fonts-iosevka
@@ -90,21 +92,20 @@ sudo apt install -y ranger
 # Install terminator (requires dbus-x11 on WSL for X window usage)
 sudo apt install -y dbus-x11 terminator
 
+# Install neovim (ubuntu)
+sudo apt install -y neovim
+
 # Install vim's plugin deps: cmake, python-dev, build-essential
 sudo apt install -y build-essential cmake python-dev
 
-# Install neovim (ubuntu)
-sudo apt install -y neovim
+# Install yarn + node (required for vim-prettier; must install before plugins are installed)
+sudo apt install -y yarn
 
 # Install base-16shell and run the jummiterm theme
 git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
 # symlink the base16 jummiterm theme in .config/base16-shell/scripts
 ln -s "$HOME/dotfiles/config/base16-shell/scripts/base16-jummiterm-dark.sh" "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
 source "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
-
-# Install yarn + node (required for vim-prettier; must install before)
-sudo apt update
-sudo apt install -y yarn
 
 # Install heroku
 
