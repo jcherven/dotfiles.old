@@ -102,10 +102,15 @@ sudo apt install -y build-essential cmake python-dev
 sudo apt install -y yarn
 
 # Install base-16shell and run the jummiterm theme
-git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
+if [ ! -d "$HOME/.config/base16-shell" ]; then
+  git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
+fi
+
 # symlink the base16 jummiterm theme in .config/base16-shell/scripts
-ln -s "$HOME/dotfiles/config/base16-shell/scripts/base16-jummiterm-dark.sh" "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
-source "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
+if [ ! -l "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh" ]; then
+  ln -s "$HOME/dotfiles/config/base16-shell/scripts/base16-jummiterm-dark.sh" "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
+  source "$HOME/.config/base16-shell/scripts/base16-jummiterm-dark.sh"
+fi
 
 # Install heroku
 
