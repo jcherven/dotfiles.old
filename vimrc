@@ -151,7 +151,7 @@ set background=dark
 " Selects the base16 color scheme currently enabled in the base16 shell script
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256 " Access colors present in 256 colorspace
-  source ~/.vimrc_background
+  call SourceIfExists("~/.vimrc_background")
 endif
 
 " MacVim or GVim-specific settings
