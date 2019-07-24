@@ -141,7 +141,7 @@ Plug 'w0rp/ale'
         \}
   let g:ale_fixers = {
         \ 'javascript': ['eslint']
-  }
+        \}
 
 " Prettier code format checking and fixing
 Plug 'prettier/vim-prettier', {
