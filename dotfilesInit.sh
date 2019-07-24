@@ -64,20 +64,31 @@ for ((j=0; j<${#DIRSLOCAL[@]}; ++j)); do
   ln -s "${DIRSLINKED[$j]}" "${DIRSLOCAL[$j]}"
 done
 
+UBUNTU_PACKAGES=(
+  lynx
+  shellcheck
+  ranger
+  dbus-x11
+  terminator
+  neovim
+  build-essential
+  cmake
+  python-dev
+)
+
 sudo apt update --fix-missing
 
 # Install curl
 sudo apt install -y curl
 
-# PPAs and external package repos for Ubuntu
+# Configure and install Ubuntu software packages with external repos or sources
 # yarn + node js
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt install -y yarn
 # fonts-iosevka
 sudo add-apt-repository -y ppa:laurent-boulard/fonts
 sudo apt update
-
-# Install fonts-iosevka (requires adding its ppa)
 sudo apt install -y fonts-iosevka
 
 # Install shellcheck
@@ -97,9 +108,6 @@ sudo apt install -y neovim
 
 # Install vim's plugin deps: cmake, python-dev, build-essential
 sudo apt install -y build-essential cmake python-dev
-
-# Install yarn + node (required for vim-prettier; must install before plugins are installed)
-sudo apt install -y yarn
 
 # Install base-16shell and run the jummiterm theme
 if [ ! -d "$HOME/.config/base16-shell" ]; then
