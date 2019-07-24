@@ -136,6 +136,12 @@ Plug 'w0rp/ale'
   let g:ale_fix_on_save=1
   " Disable linting on text change
   let g:ale_lint_on_text_changed = 'never'
+  let g:ale_linters = {
+        \ 'javascript': ['eslint']
+        \}
+  let g:ale_fixers = {
+        \ 'javascript': ['eslint']
+  }
 
 " Prettier code format checking and fixing
 Plug 'prettier/vim-prettier', {
